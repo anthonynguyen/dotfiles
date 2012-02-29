@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'open-uri'
+open("http://bash.org/?random").read =~ /<p class="qt">(.+?)<\/p>/m
+puts $1.gsub("&lt;", "<").gsub("&gt;", ">").gsub("&quot;", "\"").gsub("&nbsp;", " ").gsub("<br />", "")

@@ -1,0 +1,17 @@
+alias c='clear'
+alias ls='ls --color=auto'
+alias ll='ls -lAfh --color=auto'
+alias g='gedit'
+alias gv='gvim'
+alias v='vim'
+alias s='sudo'
+alias pacupg='sudo pacman -Syu'
+alias pacin='sudo pacman -S'
+alias yaoin='yaourt -S'
+alias pacsrch='pacman -Ss'
+alias pacrem='sudo pacman -Rns'
+alias pacinf='pacman -Qi'
+alias pacls="LC_ALL=C pacman -Qi | sed -n '/^Name[^:]*: \(.*\)/{s//\1 /;x};/^Installed[^:]*: \(.*\)/{s//\1/;H;x;s/\n//;p}' | sort -nk2 | column -t"
+alias paccc='sudo pacman -Sc'
+
+alias gac='git add . && git commit -m'
