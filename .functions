@@ -1,8 +1,13 @@
+git_branch() {
+	ref=$(git symbolic-ref HEAD | cut -d'/' -f3)
+	echo $ref
+}
+
 prompt_git() {
 	if git branch >/dev/null 2>/dev/null; then
-		echo "±"
+		echo " ± [$(git_branch)]"
 	else
-		echo "λ"
+		echo ""
 	fi
 }
 
