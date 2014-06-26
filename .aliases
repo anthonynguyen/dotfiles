@@ -13,3 +13,6 @@ alias aptinf='apt-cache show'
 alias gac='git add . && git commit -m'
 
 alias envi='source env/bin/activate'
+
+alias rgrep='rgrep -n'
+alias grep='grep -n'
