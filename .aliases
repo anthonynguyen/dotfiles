@@ -14,5 +14,5 @@ alias gac='git add . && git commit -m'
 
 alias envi='source env/bin/activate'
 
-alias rgrep='rgrep -n'
-alias grep='grep -n'
+alias rgrep='rgrep --color=auto -n'
+alias grep='grep --color=auto -n'
