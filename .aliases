@@ -1,14 +1,25 @@
 alias c='clear'
 alias ls='ls --color=auto'
 alias ll='ls -lAfh --color=auto'
-alias g='gedit'
+
 alias s='sudo'
+
 alias aptupd='sudo apt-get update'
 alias aptupg='sudo apt-get upgrade'
 alias aptin='sudo apt-get install'
 alias aptsrch='apt-cache search'
 alias aptrem='sudo apt-get purge --auto-remove'
 alias aptinf='apt-cache show'
+
+alias pacupd='sudo pacman -Syy'
+alias pacupg='sudo pacman -Syu'
+alias pacin='sudo pacman -S'
+alias pacsrch='pacman -Ss'
+alias pacrem='sudo pacman -Rs'
+alias pacinf='pacman -Qi'
+
+alias yaoin='yaourt -S'
+alias yaosrch='yaourt -Ss'
 
 alias gac='git add . && git commit -m'
 
