@@ -30,15 +30,40 @@ bindkey -e
 autoload -U colors
 colors
 
-export GEM_HOME=$HOME/Gems
-export GEM_PATH=$HOME/Gems
-export PATH=$PATH:$HOME/bin:$GEM_PATH/bin
-
 setprompt
 
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
+
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[4~' end-of-line
+
 bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[2~" quoted-insert # Ins
 bindkey "\e[3~" delete-char # Del
+
+
+export PANEL_FIFO=/home/anthony/.panel-fifo
+export PANEL_HEIGHT=20
+export PANEL_FONT_FAMILY="-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*"
+
+export COLOR_FOCUSED_FG='#FFF6F9FF'
+export COLOR_FOCUSED_URGENT_FG='#FF34322E'
+export COLOR_FG='#FF777777'
+export COLOR_BG='#FF333333'
+export COLOR_URGENT_FG='#FFFF0000'
+export COLOR_TITLE_FG='#FFAAAAAA'
+export COLOR_STATUS_FG='#FFA3A6AB'
+
+export MPD_LIGHT='#FFAAE3FF'
+export MPD_DARK='#FF779FB3'
+
+export VOLUME_LIGHT='#FFAAFFB8'
+export VOLUME_DARK='#FF66996E'
+
+export TIME_LIGHT='#FFFFAAAA'
+export TIME_DARK='#FFBF8080'
+
+# added by travis gem
+[ -f /home/anthony/.travis/travis.sh ] && source /home/anthony/.travis/travis.sh
