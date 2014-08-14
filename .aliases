@@ -25,8 +25,11 @@ alias gac='git add . && git commit -m'
 
 alias envi='source env/bin/activate'
 
-alias grep='grep --color=auto'
+alias grep='grep --color=always'
 alias rgrep='grep -r -n'
+alias rgrepi='rgrep -i'
+
+alias less='less -R'
 
 alias tls='tmux ls'
 alias ta='tmux a'
