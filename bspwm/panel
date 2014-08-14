@@ -1,0 +1,20 @@
+#! /bin/sh
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc config top_padding $PANEL_HEIGHT
+bspc control --subscribe > "$PANEL_FIFO" &
+
+while true; do
+	mpc status -f "S%artist% - %title% (%time%)" | head -n1 > "$PANEL_FIFO" 
+    date +"T[%H:%M:%S] %b %d" > "$PANEL_FIFO" 
+	sleep 1s
+done &
+
+cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | bar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "#FF777777" -B "#FF222222" | sh &
+
+wait

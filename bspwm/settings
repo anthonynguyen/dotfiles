@@ -1,0 +1,27 @@
+#!/bin/sh
+
+bspc config border_width       2 
+bspc config window_gap         14
+
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+
+bspc monitor -d i ii iii iv v
+bspc monitor -d web dev comm game misc
+
+bspc config normal_border_color "#09091F"
+bspc config normal_private_border_color "#09091F"
+bspc config focused_border_color "#cc4444"
+bspc config focused_private_border_color "#997b3d"
+bspc config presel_border_color "#4444ff"
+
+bspc config top_padding 20
+bspc config bottom_padding 16
+
+bspc rule -a Firefox desktop=^1 focus=on
+bspc rule -a Sublime_text desktop=^2 
+bspc rule -a ts3client_linux_amd64 desktop=^3
+bspc rule -a Quake3-UrT.x86_64 desktop=^4 floating=on
+bspc rule -a Steam desktop=^4 floating=on
