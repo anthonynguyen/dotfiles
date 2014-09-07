@@ -25,3 +25,6 @@ bspc rule -a Sublime_text desktop=^2
 bspc rule -a ts3client_linux_amd64 desktop=^3
 bspc rule -a Quake3-UrT.x86_64 desktop=^4 floating=on
 bspc rule -a Steam desktop=^4 floating=on
+bspc rule -a Zeal floating=on
+bspc rule -a zeal floating=on
+

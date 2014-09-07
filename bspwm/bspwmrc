@@ -6,6 +6,8 @@ trayer  --edge bottom --align left --height 16 --transparent true --alpha 256 --
 
 xrdb ~/.Xresources
 nitrogen --restore
+compton -cb
+zeal &
 
 export PANEL_FIFO=/home/anthony/.panel-fifo
 export PANEL_HEIGHT=20
