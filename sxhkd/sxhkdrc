@@ -76,7 +76,7 @@ F1
 	urxvt
 
 ctrl + space
-	j4-dmenu-desktop
+	j4-dmenu-desktop --dmenu="dmenu -i -b -p 'Run:' -fn '-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*' -nb '#222' -sb '#cc4444'"
 
 XF86AudioMute
 	amixer sset Master toggle
