@@ -15,6 +15,6 @@ while true; do
 	sleep 1s
 done &
 
-cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | bar -g 1648x$PANEL_HEIGHT+16 -f "$PANEL_FONT_FAMILY" -F "#FF777777" -B "#FF222222" | sh &
+cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | bar -g 1680x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "#FF777777" -B "#FF222222" | sh &
 
 wait

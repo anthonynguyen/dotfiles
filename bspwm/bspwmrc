@@ -2,11 +2,12 @@
 
 ~/.config/bspwm/settings
 
-trayer  --edge bottom --align left --height 16 --transparent true --alpha 256 --expand true &
+trayer  --edge bottom --align left --height 16 --transparent true --alpha 255 --expand true &
+#stalonetray &
 
 xrdb ~/.Xresources
-nitrogen --restore
-compton -cb
+#nitrogen --restore
+xsetroot -solid "#171717"
 zeal &
 
 export PANEL_FIFO=/home/anthony/.panel-fifo
