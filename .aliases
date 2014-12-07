@@ -22,6 +22,10 @@ alias yaoin='yaourt -S'
 alias yaosrch='yaourt -Ss'
 
 alias gac='git add . && git commit -m'
+alias ga='git add'
+alias gcom='git commit'
+alias gs='git status'
+alias gl='git log'
 
 alias envi='source env/bin/activate'
 
@@ -33,3 +37,5 @@ alias less='less -R'
 
 alias tls='tmux ls'
 alias ta='tmux a'
+
+alias please='sudo `fc -ln -1`'
