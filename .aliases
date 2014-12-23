@@ -25,6 +25,7 @@ alias gac='git add . && git commit -m'
 alias ga='git add'
 alias gcom='git commit'
 alias gs='git status'
+alias gd='git diff'
 alias gl='git log'
 
 alias envi='source env/bin/activate'

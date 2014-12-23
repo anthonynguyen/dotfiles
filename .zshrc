@@ -43,6 +43,7 @@ bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[2~" quoted-insert # Ins
 bindkey "\e[3~" delete-char # Del
 
+export EDITOR=vim
 
 export PANEL_FIFO=/home/anthony/.panel-fifo
 export PANEL_HEIGHT=20
@@ -67,3 +68,6 @@ export TIME_DARK='#FFBF8080'
 
 # added by travis gem
 [ -f /home/anthony/.travis/travis.sh ] && source /home/anthony/.travis/travis.sh
+
+
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
