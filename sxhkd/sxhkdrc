@@ -88,16 +88,16 @@ XF86AudioLowerVolume
 	amixer set Master 3%-
 
 XF86AudioPlay
-	ncmpcpp toggle
+	clementine -t
 
 XF86AudioStop
-	ncmpcpp stop
+	clementine -s
 
 XF86AudioPrev
-	ncmpcpp prev
+	clementine -r
 
 XF86AudioNext
-	ncmpcpp next
+	clementine -f
 
 
 # make sxhkd reload its configuration files:
