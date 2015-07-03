@@ -10,11 +10,20 @@ bspc config top_padding $PANEL_HEIGHT
 bspc control --subscribe > "$PANEL_FIFO" &
 
 while true; do
-	mpc status -f "S%artist% - %title% (%time%)" | head -n1 > "$PANEL_FIFO" 
-    date +"T[%H:%M:%S] %b %d" > "$PANEL_FIFO" 
-	sleep 1s
+	date +"T%H:%M" > "$PANEL_FIFO"
+	date +"D%b %d" > "$PANEL_FIFO"
+	~/.config/bspwm/battery.py > "$PANEL_FIFO"
+	~/.config/bspwm/volume.py > "$PANEL_FIFO"
+	~/.config/bspwm/internet.py > "$PANEL_FIFO"
+	echo A`xtitle` > "$PANEL_FIFO"
+	sleep 0.5s
 done &
 
-cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | bar -g 1680x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "#FF777777" -B "#FF222222" | sh &
+PANEL_HEIGHT=24
+
+PANEL_FONT_1="-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*"
+PANEL_FONT_2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+
+cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | lemonbar -g 1920x$PANEL_HEIGHT -f "$PANEL_FONT_1" -f "$PANEL_FONT_2" -F "#FF777777" -B "#FF222222" | sh &
 
 wait
