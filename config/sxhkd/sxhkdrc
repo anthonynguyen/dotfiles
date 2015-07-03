@@ -85,10 +85,10 @@ XF86AudioMute
 	amixer sset Master toggle
 
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	~/bin/popup.sh $(~/bin/volume.sh +)
 
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	~/bin/popup.sh $(~/bin/volume.sh -)
 
 XF86AudioPlay
 	clementine -t
@@ -103,10 +103,10 @@ XF86AudioNext
 	clementine -f
 
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	~/bin/popup.sh $(~/bin/brightness.sh +)
 
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	~/bin/popup.sh $(~/bin/brightness.sh -)
 
 XF86Calculator
 	echo CALCULATOR
