@@ -75,6 +75,9 @@ super + Return
 F1
 	urxvt
 
+F2
+	~/.config/bspwm/drawterm.sh
+
 ctrl + space
 	j4-dmenu-desktop --dmenu="dmenu -i -b -p 'Run:' -fn '-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*' -nb '#222' -sb '#cc4444'"
 
@@ -82,10 +85,10 @@ XF86AudioMute
 	amixer sset Master toggle
 
 XF86AudioRaiseVolume
-	amixer set Master 3%+
+	amixer set Master 5%+
 
 XF86AudioLowerVolume
-	amixer set Master 3%-
+	amixer set Master 5%-
 
 XF86AudioPlay
 	clementine -t
@@ -99,6 +102,20 @@ XF86AudioPrev
 XF86AudioNext
 	clementine -f
 
+XF86MonBrightnessUp
+	xbacklight -inc 10
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+XF86Calculator
+	echo CALCULATOR
+
+XF86MyComputer
+	thunar
+
+XF86HomePage
+	chromium
 
 # make sxhkd reload its configuration files:
 super + Escape
