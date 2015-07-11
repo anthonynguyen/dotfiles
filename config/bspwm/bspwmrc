@@ -2,16 +2,24 @@
 
 ~/.config/bspwm/settings
 
-trayer  --edge bottom --align left --height 16 --transparent true --alpha 255 --expand true &
-#stalonetray &
+xbacklight -set 40 &
+
+trayer  --edge bottom --align left --height 24 --transparent true --alpha 255 --expand true &
+
+sxhkd &
+
+nm-applet &
+cbatticon -n &
+volumeicon &
+
+#light-locker &
+
+#compton -bcfG -l -11 -t -11 -r 8 -D 2 -I 0.06 -O 0.06
 
 xrdb ~/.Xresources
-#nitrogen --restore
-xsetroot -solid "#171717"
-zeal &
+
+nitrogen --restore &
 
 export PANEL_FIFO=/home/anthony/.panel-fifo
-export PANEL_HEIGHT=20
-export PANEL_FONT_FAMILY="-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*"
 
 ~/.config/bspwm/panel &

@@ -19,11 +19,12 @@ while true; do
 	sleep 0.5s
 done &
 
-PANEL_HEIGHT=24
+PANEL_FONT_3="desktops:size=12"
+PANEL_FONT_2="iconfont:size=12"
+PANEL_FONT_1="Droid Sans:size=10"
 
-PANEL_FONT_1="-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*"
-PANEL_FONT_2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+PANEL_HEIGHT=30
 
-cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | lemonbar -g 1920x$PANEL_HEIGHT -f "$PANEL_FONT_1" -f "$PANEL_FONT_2" -F "#FF777777" -B "#FF222222" | sh &
+cat "$PANEL_FIFO" | ~/.config/bspwm/bar_parse.py | ~/dev/bar2/lemonbar -g 1920x$PANEL_HEIGHT -f "$PANEL_FONT_1" -f "$PANEL_FONT_2" -f "$PANEL_FONT_3" -F "#FFFFFFFF" -B "#FF222222" -u 2 | sh &
 
 wait

@@ -17,11 +17,4 @@ if m is None or n is None:
 strength = int(int(m.group(1)) / int(m.group(2)) * 100)
 ssid = n.group(1)
 
-if strength <= 30:
-	c = "\ue0ee"
-elif strength <= 70:
-	c = "\ue0ef"
-else:
-	c = "\ue0f0"
-
-print("I{} {}".format(c, ssid))
+print("I\ue804  {} ({}%)".format(ssid, strength))

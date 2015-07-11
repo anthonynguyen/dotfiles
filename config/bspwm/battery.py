@@ -16,13 +16,13 @@ if m is None:
 percentage = int(m.group(1))
 
 if percentage > 89:
-	c = "\ue1ff"
+	c = "\ue80a"
 elif percentage < 11:
-	c = "\ue1fd"
+	c = "\ue808"
 else:
-	c = "\ue1fe"
+	c = "\ue809"
 
 if "Charging" in res:
-	c = "\ue200"
+	c = "\ue80b"
 
-print("B{} {}%%".format(c, percentage))
+print("B{} {}%".format(c, percentage))

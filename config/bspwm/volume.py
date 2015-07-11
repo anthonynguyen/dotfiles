@@ -10,17 +10,17 @@ res = raw.decode()
 m = re.search("(\d+)\%", res)
 
 if m is None:
-	print("V\ue200 No battery")
+	print("V\ue200 --")
 	exit()
 
 percentage = int(m.group(1))
 
-if percentage > 49:
-	c = "\ue050"
+if percentage > 59:
+	c = "\ue807"
 else:
-	c = "\ue04e"
+	c = "\ue806"
 
 if percentage == 0 or res.strip()[-4:] == "off]":
-	c = "\ue04f"
+	c = "\ue805"
 
-print("V{} {}%%".format(c, percentage))
+print("V{} {}%".format(c, percentage))

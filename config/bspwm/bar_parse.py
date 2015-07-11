@@ -9,14 +9,15 @@ dateInfo = ""
 inetInfo = ""
 windowInfo = ""
 
-COLOR_FOCUSED_FG="F6F9FF"
-COLOR_FOCUSED_URGENT_FG="34322E"
+COLOR_FOCUSED_FG="FFFFFF"
 COLOR_FG="009966"
+#COLOR_FG="009966"
 COLOR_URGENT_FG="FF0000"
 
-STATUS_C="AAAAAA"
+WHITE="CCCCCC"
 
-HIGHLIGHT="006644"
+HIGHLIGHT1="003322"
+HIGHLIGHT2="00B377"
 WHITE="FFFFFF"
 
 
@@ -29,29 +30,31 @@ def bg(s, c, o = "FF"):
 while True:
 	line = input()
 	if line[0] == "B":
-		batteryInfo = fg(" {}  ".format(line[1:]), STATUS_C)
+		batteryInfo = fg("{} {}".format(fg(line[1], HIGHLIGHT2), line[2:]), WHITE)
 	elif line[0] == "V":
-		volumeInfo = fg(" {} ".format(line[1:]), STATUS_C)
+		volumeInfo = fg("%{{A1:~/bin/popup.sh $(~/bin/volume.sh) :}}%{{A4:~/bin/popup.sh $(~/bin/volume.sh +) :}}%{{A5:~/bin/popup.sh $(~/bin/volume.sh -) :}}{} {}%{{A}}%{{A}}%{{A}}".format(fg(line[1], HIGHLIGHT2), line[2:]), WHITE)
 	elif line[0] == "I":
-		inetInfo = fg(" {} ".format(line[1:]), STATUS_C)
+		inetInfo = fg("{} {}".format(fg(line[1], HIGHLIGHT2), line[2:]), WHITE)
 	elif line[0] == "T":
-		clockInfo = fg(" \ue015 {}  ".format(line[1:]), WHITE)
+		clockInfo = fg("{}  {}".format(fg("\ue80e", HIGHLIGHT2), line[1:]), WHITE)
 	elif line[0] == "D":
-		dateInfo = fg("  \ue225 {} ".format(line[1:]), WHITE)
+		dateInfo = fg("{}  {}".format(fg("\ue80c", HIGHLIGHT2), line[1:]), WHITE)
 	elif line[0] == "A":
 		winTitle = line[1:]
 	elif line[0] == "W":
 		winfo = line[1:]
-		windowInfo = " "
+		windowInfo = ""
 		for i in winfo.split(":"):
 			if i[0] in "OF":  # focused, normal
-				windowInfo += fg(" \ue000 ", COLOR_FOCUSED_FG)
+				windowInfo += fg("%{{A:bspc desktop -f \"{}\":}}%{{+u}}   {}   %{{-u}}%{{A}}".format(i[1:], i[1:]), COLOR_FOCUSED_FG)
 			elif i[0] == "U": # focused, urgent
-				windowInfo += fg(" \ue000 ", COLOR_FOCUSED_URGENT_FG)
-			elif i[0] in "of": # unfocused, normal
-				windowInfo += fg(" \ue001 ", COLOR_FG)
+				windowInfo += fg("%{{A:bspc desktop -f \"{}\":}}%{{+u}}   {}   %{{-u}}%{{A}}".format(i[1:], i[1:]), COLOR_URGENT_FG)
+			elif i[0] == "o": # unfocused, normal, has windows
+				windowInfo += fg("%{{A:bspc desktop -f \"{}\":}}   {}   %{{A}}".format(i[1:], i[1:]), COLOR_FG)
+			elif i[0] == "f": # unfocused, normal, empty
+				windowInfo += fg("%{{A:bspc desktop -f \"{}\":}}   {}   %{{A}}".format(i[1:], i[1:]), COLOR_FG)
 			elif i[0] == "u": # unfocused, urgent
-				windowInfo += fg(" \ue001 ", COLOR_URGENT_FG)
-		windowInfo += " "
+				windowInfo += fg("%{{A:bspc desktop -f \"{}\":}}   {}   %{{A}}".format(i[1:], i[1:]), COLOR_URGENT_FG)
+		windowInfo += ""
 
-	print("%{l}" + bg(windowInfo, HIGHLIGHT) + "  " + fg(winTitle, STATUS_C) + "%{r} " + inetInfo + volumeInfo + batteryInfo + bg(dateInfo + clockInfo, HIGHLIGHT))
+	print("%{l}" + bg(windowInfo, HIGHLIGHT1) + "    " + fg(winTitle, WHITE) + "%{r} " + "      ".join([inetInfo, volumeInfo, batteryInfo, dateInfo, clockInfo]) + "   ")
