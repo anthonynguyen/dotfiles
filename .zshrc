@@ -70,4 +70,4 @@ export TIME_DARK='#FFBF8080'
 [ -f /home/anthony/.travis/travis.sh ] && source /home/anthony/.travis/travis.sh
 
 
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dev/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -12,7 +12,7 @@ prompt_git() {
 }
 
 setprompt() {
-	PROMPT="%B%{%F{yellow}%}$(prompt_git)%f%{%F{cyan}%} %~:%f%b "
+	PROMPT="%B($(hostname))%{%F{yellow}%}$(prompt_git)%f%{%F{cyan}%} %~:%f%b "
 }
 
 

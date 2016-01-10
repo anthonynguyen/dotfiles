@@ -4,6 +4,12 @@ alias ll='ls -lAfh --color=auto'
 
 alias s='sudo'
 
+alias zypupg='sudo zypper update'
+alias zypin='sudo zypper install'
+alias zypsrch='zypper search'
+alias zyprem='sudo zypper remove'
+alias zypinf='zypper info'
+
 alias aptupd='sudo apt-get update'
 alias aptupg='sudo apt-get upgrade'
 alias aptin='sudo apt-get install'
@@ -30,7 +36,9 @@ alias gl='git log'
 
 alias envi='source env/bin/activate'
 
-alias grep='grep --color=always'
+alias python='python3'
+
+alias grep='ag'
 alias rgrep='grep -r -n'
 alias rgrepi='rgrep -i'
 
