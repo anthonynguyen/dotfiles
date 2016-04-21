@@ -69,6 +69,7 @@ export EDITOR=vim
 # added by travis gem
 # [ -f /home/anthony/.travis/travis.sh ] && source /home/anthony/.travis/travis.sh
 
+export PATH="$HOME/bin:$PATH"
 source ~/dev/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #export NVM_DIR="/home/anthony/.nvm"
