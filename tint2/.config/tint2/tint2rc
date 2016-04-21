@@ -131,7 +131,7 @@ battery_background_id = 3
 
 
 execp = new
-execp_command = xprop -root -spy | /home/anthony/workspace_parse.py
+execp_command = xprop -root -spy | /home/anthony/bin/workspace_parse.py
 execp_interval = 1
 execp_continuous = 1
 execp_padding = 16 2
@@ -140,7 +140,7 @@ execp_font = Font Awesome 10
 execp_font_color = #FFFFFF 100
 
 #execp = new
-#execp_command = /home/anthony/dev/xtitle/xtitle -s | /home/anthony/active_window.py
+#execp_command = /home/anthony/dev/xtitle/xtitle -s | /home/anthony/bin/active_window.py
 #execp_interval = 1
 #execp_continuous = 1
 #execp_padding = 24 2
@@ -149,10 +149,10 @@ execp_font_color = #FFFFFF 100
 #execp_font_color = #FFFFFF 100
 
 execp = new
-execp_command = /home/anthony/music_parse.py
+execp_command = /home/anthony/bin/music_parse.py
 execp_interval = 2
 execp_padding = 16 2
 execp_background_id = 4
 execp_font = Font Awesome 10
 execp_font_color = #FFFFFF 100
-execp_lclick_command = /home/anthony/ncmpcpp.sh
+execp_lclick_command = /home/anthony/bin/ncmpcpp.sh

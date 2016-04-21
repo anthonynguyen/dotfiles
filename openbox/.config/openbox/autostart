@@ -13,4 +13,4 @@ xbacklight -set 50 &
 mpd &
 mpdscribble &
 
-~/after_start.sh &
+~/bin/after_start.sh &
