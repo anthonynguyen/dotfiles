@@ -5,20 +5,22 @@ git_branch() {
 
 prompt_git() {
 	if git branch >/dev/null 2>/dev/null; then
-		echo " ± [$(git_branch)]"
+		#echo "± [$(git_branch)]"
+		echo "±"
 	else
-		echo ""
+		#echo ""
+		echo "%#"
 	fi
 }
 
 setprompt() {
-	PROMPT="%B($(hostname))%{%F{yellow}%}$(prompt_git)%f%{%F{cyan}%} %~:%f%b "
+	#PROMPT="(%n@%F{red}%m%f)%{%F{cyan}%} %~%f %{%F{yellow}%}$(prompt_git)%f"$'\n%F{blue}➔ %#%f '
+	PROMPT="%F{cyan}%~%f %F{magenta}$(prompt_git)%f "
 }
 
 
 precmd () {
 	setprompt
-	print -Pn "\e]0;%n: %~\a"
 }
 
 mke() {
