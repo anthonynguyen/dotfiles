@@ -1,0 +1,13 @@
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30" 
+visualizer_in_stereo = "yes"
+#visualizer_type = "wave" (spectrum/wave)
+visualizer_type = "wave_filled" (spectrum/wave)
+#visualizer_look = "+•"
+visualizer_look = "||"
+#visualizer_use_colors = "yes"
+#visualizer_color = "cyan,yellow"
+visualizer_color = "green,yellow,red"
+user_interface = "alternative"
+startup_screen = "visualizer"
