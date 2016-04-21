@@ -1,0 +1,16 @@
+tint2 &
+
+tp-battery-icon &
+~/dev/caffeine/bin/caffeine &
+
+sudo ~/touchpad.sh
+
+compton -b --config ~/.compton.conf
+feh --bg-fill ~/Pictures/277H_noise.png &
+
+xbacklight -set 50 &
+
+mpd &
+mpdscribble &
+
+~/after_start.sh &
