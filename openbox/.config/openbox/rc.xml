@@ -308,27 +308,27 @@
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>~/backlight.py +</command>
+        <command>~/bin/backlight.py +</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>~/backlight.py -</command>
+        <command>~/bin/backlight.py -</command>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>~/volume.py +</command>
+        <command>~/bin/volume.py +</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>~/volume.py -</command>
+        <command>~/bin/volume.py -</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>~/volume.py mute</command>
+        <command>~/bin/volume.py mute</command>
       </action>
     </keybind>
     <keybind key="XF86MyComputer">
@@ -348,7 +348,7 @@
     </keybind>
     <keybind key="F3">
       <action name="Execute">
-        <command>/home/anthony/skippy-xd.sh</command>
+        <command>~/bin/skippy-xd.sh</command>
       </action>
     </keybind>
     <keybind key="C-space">
