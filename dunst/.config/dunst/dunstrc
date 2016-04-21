@@ -187,9 +187,9 @@
     timeout = 2
 
 [urgency_normal]
-    background = "#518ECC"
+    background = "#335980"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 5
 
 [urgency_critical]
     background = "#CC5151"
