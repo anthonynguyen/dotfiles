@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Blue</name>
-    <titleLayout>CLD</titleLayout>
+    <name>Diamond</name>
+    <titleLayout>CILD</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -418,7 +418,12 @@
       </action>
     </keybind>
     <keybind key="W-Escape">
-      <action name="ToggleDecorations"/>
+      <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-S-Escape">
+      <action name="Restart">
+        <command>/home/anthony/dev/openbox/openbox/openbox</command>
+      </action>
     </keybind>
   </keyboard>
   <mouse>
