@@ -1,7 +1,11 @@
-tint2 &
+DESKTOP_ENV="openbox"
+export WM="Openbox"
+~/tint2/tint2 &
 
-tp-battery-icon &
-~/dev/caffeine/bin/caffeine &
+#tp-battery-icon &
+~/dev/tp-battery-icon/tp-battery-icon.py &
+
+$HOME/dev/caffeine/bin/caffeine &
 
 sudo ~/touchpad.sh
 
@@ -10,7 +14,19 @@ feh --bg-fill ~/Pictures/277H_noise.png &
 
 xbacklight -set 50 &
 
+eval $(gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg)
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_SOCKET
+export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
+
+dbus-launch nm-applet &
+
 mpd &
 mpdscribble &
+
+dunst &
+
+xrdb ~/.Xresources
 
 ~/bin/after_start.sh &

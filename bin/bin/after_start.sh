@@ -2,11 +2,10 @@
 
 sleep 10
 
-synclient TapButton1=1
-synclient TapButton2=3
-synclient TapButton3=2
-~/touchpadbuttons.sh &
-volumeicon &
+#synclient TapButton1=1
+#synclient TapButton2=3
+#synclient TapButton3=2
+#~/touchpadbuttons.sh &
 
 killall notification-daemon
-dunst &
+volumeicon &

@@ -1,8 +1,13 @@
 !URxvt*.transparent: true
 !URxvt*.shading: 1
 URxvt.scrollBar: false
-
+URxvt.geometry: 81x23
 URxvt.depth: 32
+
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
 
 URxvt.borderless: 1
 URxvt.saveLines: 5000
@@ -11,306 +16,37 @@ URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.cursorBlink: 1
 
+URxvt.internalBorder: 12
+
 URxvt.urgentOnBell: True
 
-URxvt*font: xft:Terminus:size=9
-!URxvt*font: xft:Lime:size=10
-!URxvt*font: xft:terminusmod2:size=9
-URxvt*boldFont: xft:Terminus:size=9
-!URxvt*boldFont: xft:terminusmod2:size=10
-URxvt*italicFont: xft:Terminus:size=9
-URxvt*bolditalicFont: xft:Terminus:size=9
+URxvt*font: xft:Hack:size=9
+URxvt*boldFont: xft:Hack:bold:size=9
+URxvt*italicFont: xft:Hack:italic:size=9
+URxvt*bolditalicFont: xft:Hack:bold:italic:size=9
 
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
 
-! Base16 Atelier Forest
-! Scheme: Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/forest)
+*.foreground:   #f8f8f2
+*.background:   #2B2B32
+*.cursorColor:  #f8f8f2
 
-!#define base00 #1b1918
-!#define base00 #101112
-#define base00 #09090F
-#define base01 #2c2421
-#define base02 #68615e
-#define base03 #766e6b
-#define base04 #9c9491
-#define base05 #a8a19f
-#define base06 #e6e2e0
-#define base07 #f1efee
-#define base08 #f22c40
-#define base09 #df5320
-#define base0A #d5911a
-#define base0B #5ab738
-#define base0C #00ad9c
-#define base0D #407ee7
-#define base0E #6666ea
-#define base0F #c33ff3
+*.color0:       #2B2B32
+*.color1:       #f92672
+*.color2:       #a6e22e
+*.color3:       #f4bf75
+*.color4:       #66d9ef
+*.color5:       #ae81ff
+*.color6:       #a1efe4
+*.color7:       #f8f8f2
 
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
+*.color8:       #75715e
+*.color9:       #f92672
+*.color10:      #a6e22e
+*.color11:      #f4bf75
+*.color12:      #66d9ef
+*.color13:      #ae81ff
+*.color14:      #a1efe4
+*.color15:      #f9f8f5
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
-
-*.color8:       base03
-*.color9:       base08
-*.color10:      base0B
-*.color11:      base0A
-*.color12:      base0D
-*.color13:      base0E
-*.color14:      base0C
-*.color15:      base07
-
-! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
-*.color16:      base09
-*.color17:      base0F
-*.color18:      base01
-*.color19:      base02
-*.color20:      base04
-*.color21:      base06
-
-
-*.background: rgba:0900/0900/0F00/AA00! Enabled modi
-rofi.modi:                           window,run,ssh
-! Window opacity
-rofi.opacity:                        100
-! Window width
-rofi.width:                          20
-! Number of lines
-rofi.lines:                          5
-! Number of columns
-rofi.columns:                        1
-! Font to use
-rofi.font:                           Roboto 11
-! Foreground color
-rofi.fg:                             #f8f8f2
-! Background color
-rofi.bg:                             #2B2B32
-! Foreground color for active row
-rofi.fg-active:                      #268BD2
-! Foreground color for urgent row
-rofi.fg-urgent:                      #DC322F
-! Foreground color for highlighted active row
-rofi.hlfg-active:                    #FDF6E3
-! Foreground color for highlighted urgent row
-rofi.hlfg-urgent:                    #FDF6E3
-! Background color for active row
-rofi.bg-active:                      #FDF6E3
-! Background color for urgent row
-rofi.bg-urgent:                      #FDF6E3
-! Background color for highlighted active row
-rofi.hlbg-active:                    #268BD2
-! Background color for highlighted urgent row
-rofi.hlbg-urgent:                    #DC322F
-! Background color for alternating row
-rofi.bgalt:                          #2B2B32
-! Foreground color for highlighted row
-rofi.hlfg:                           #EEE8D5
-! Background color for highlighted row
-rofi.hlbg:                           #586E75
-! Border color
-rofi.bc:                             #002B36
-! Use extended color scheme
-rofi.color-enabled:                  true
-! Color scheme for normal row
-rofi.color-normal:                   #ffffff, #002b36, #f6f6f6, #518ecc, #ffffff
-! Color scheme for urgent row
-rofi.color-urgent:                   #ffffff, #dc322f, #f6f6f6, #dc322f, #fdf6e3
-! Color scheme for active row
-rofi.color-active:                   #ffffff, #2dba1d, #f6f6f6, #19b726, #ffffff
-! Color scheme window
-rofi.color-window:                   #ffffff, #002b36, #000000
-! Border width
-rofi.bw:                             1
-! Location on screen
-rofi.location:                       0
-! Padding
-rofi.padding:                        10
-! Y-offset relative to location
-rofi.yoffset:                        0
-! X-offset relative to location
-rofi.xoffset:                        0
-! Always show number of lines
-rofi.fixed-num-lines:                false
-! Terminal to use
-rofi.terminal:                       rofi-sensible-terminal
-! Ssh client to use
-rofi.ssh-client:                     ssh
-! Ssh command to execute
-rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
-! Run command to execute
-rofi.run-command:                    {cmd}
-! Command to get extra run targets
-rofi.run-list-command:               
-! Run command to execute that runs in shell
-rofi.run-shell-command:              {terminal} -e {cmd}
-! Disable history in run/ssh
-rofi.disable-history:                false
-! Use levenshtein sorting
-rofi.levenshtein-sort:               false
-! Set case-sensitivity
-rofi.case-sensitive:                 false
-! Enable sidebar-mode
-rofi.sidebar-mode:                   false
-! Set lazy filter limit
-rofi.lazy-filter-limit:              15000
-! Row height (in chars)
-rofi.eh:                             1
-! Enable auto select mode
-rofi.auto-select:                    false
-! Parse hosts file for ssh mode
-rofi.parse-hosts:                    false
-! Parse known_hosts file for ssh mode
-rofi.parse-known-hosts:              true
-! Set the modi to combine in combi mode
-rofi.combi-modi:                     window,run
-! Do a more fuzzy matching
-rofi.fuzzy:                          false
-! Use glob matching
-rofi.glob:                           false
-! Use regex matching
-rofi.regex:                          false
-! Tokenize input string
-rofi.tokenize:                       true
-! Monitor id to show on
-rofi.m:                              -1
-! Margin between rows
-rofi.line-margin:                    0
-! Pre-set filter
-rofi.filter:                         
-! Separator style (none, dash, solid)
-rofi.separator-style:                none
-! Hide scroll-bar
-rofi.hide-scrollbar:                 false
-! Show markup
-rofi.markup-rows:                    false
-! Fullscreen
-rofi.fullscreen:                     false
-! Fake transparency
-rofi.fake-transparency:              false
-! DPI
-rofi.dpi:                            -1
-! Threads to use for string matching
-rofi.threads:                        1
-! Scrollbar width
-rofi.scrollbar-width:                5
-! Pidfile location
-rofi.pid:                            /run/user/1000/rofi.pid
-! Keybinding
-rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
-! Keybinding
-rofi.kb-secondary-paste:             Control+v,Insert
-! Keybinding
-rofi.kb-clear-line:                  Control+u
-! Keybinding
-rofi.kb-move-front:                  Control+a
-! Keybinding
-rofi.kb-move-end:                    Control+e
-! Keybinding
-rofi.kb-move-word-back:              Alt+b
-! Keybinding
-rofi.kb-move-word-forward:           Alt+f
-! Keybinding
-rofi.kb-move-char-back:              Left,Control+b
-! Keybinding
-rofi.kb-move-char-forward:           Right,Control+f
-! Keybinding
-rofi.kb-remove-word-back:            Control+Alt+h
-! Keybinding
-rofi.kb-remove-word-forward:         Control+Alt+d
-! Keybinding
-rofi.kb-remove-char-forward:         Delete,Control+d
-! Keybinding
-rofi.kb-remove-char-back:            BackSpace,Control+h
-! Keybinding
-rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
-! Keybinding
-rofi.kb-accept-custom:               Control+Return
-! Keybinding
-rofi.kb-accept-entry-continue:       Shift+Return
-! Keybinding
-rofi.kb-mode-next:                   Shift+Right,Control+Tab
-! Keybinding
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
-! Keybinding
-rofi.kb-toggle-case-sensitivity:     grave,dead_grave
-! Keybinding
-rofi.kb-delete-entry:                Shift+Delete
-! Keybinding
-rofi.kb-row-left:                    Control+Page_Up
-! Keybinding
-rofi.kb-row-right:                   Control+Page_Down
-! Keybinding
-rofi.kb-row-up:                      Up,Control+p,Shift+Tab
-! Keybinding
-rofi.kb-row-down:                    Down,Control+n
-! Keybinding
-rofi.kb-row-tab:                     Tab
-! Keybinding
-rofi.kb-page-prev:                   Page_Up
-! Keybinding
-rofi.kb-page-next:                   Page_Down
-! Keybinding
-rofi.kb-row-first:                   Home,KP_Home
-! Keybinding
-rofi.kb-row-last:                    End,KP_End
-! Keybinding
-rofi.kb-row-select:                  Control+space
-! Keybinding
-rofi.kb-cancel:                      Escape,Control+bracketleft
-! Keybinding
-rofi.kb-custom-1:                    Alt+1
-! Keybinding
-rofi.kb-custom-2:                    Alt+2
-! Keybinding
-rofi.kb-custom-3:                    Alt+3
-! Keybinding
-rofi.kb-custom-4:                    Alt+4
-! Keybinding
-rofi.kb-custom-5:                    Alt+5
-! Keybinding
-rofi.kb-custom-6:                    Alt+6
-! Keybinding
-rofi.kb-custom-7:                    Alt+7
-! Keybinding
-rofi.kb-custom-8:                    Alt+8
-! Keybinding
-rofi.kb-custom-9:                    Alt+9
-! Keybinding
-rofi.kb-custom-10:                   Alt+0
-! Keybinding
-rofi.kb-custom-11:                   Alt+Shift+1
-! Keybinding
-rofi.kb-custom-12:                   Alt+Shift+2
-! Keybinding
-rofi.kb-custom-13:                   Alt+Shift+3
-! Keybinding
-rofi.kb-custom-14:                   Alt+Shift+4
-! Keybinding
-rofi.kb-custom-15:                   Alt+Shift+5
-! Keybinding
-rofi.kb-custom-16:                   Alt+Shift+6
-! Keybinding
-rofi.kb-custom-18:                   Alt+Shift+8
-! Keybinding
-rofi.kb-custom-17:                   Alt+Shift+7
-! Keybinding
-rofi.kb-custom-19:                   Alt+Shift+9
-! Keybinding
-rofi.kb-screenshot:                  Alt+Shift+S
-! Keybinding
-rofi.kb-toggle-sort:                 Alt+grave
-! Keybinding
-rofi.key-window:                     
-! Keybinding
-rofi.key-run:                        
-! Keybinding
-rofi.key-ssh:                        

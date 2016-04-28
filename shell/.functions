@@ -15,7 +15,7 @@ prompt_git() {
 
 setprompt() {
 	#PROMPT="(%n@%F{red}%m%f)%{%F{cyan}%} %~%f %{%F{yellow}%}$(prompt_git)%f"$'\n%F{blue}➔ %#%f '
-	PROMPT="%F{cyan}%~%f %F{magenta}$(prompt_git)%f "
+	PROMPT="%F{cyan}%~%f %F{white}$(prompt_git)%f "
 }
 
 

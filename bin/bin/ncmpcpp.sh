@@ -4,5 +4,5 @@ if [ "$(pidof ncmpcpp)" ]
 then
   pkill ncmpcpp
 else
-  st -e ncmpcpp -s visualizer
+ urxvt -e ncmpcpp -s visualizer
 fi

@@ -43,7 +43,7 @@
   </placement>
   <theme>
     <name>Diamond</name>
-    <titleLayout>CILD</titleLayout>
+    <titleLayout>LD</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -58,7 +58,7 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Source Sans Pro</name>
-      <size>12</size>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -67,7 +67,7 @@
     </font>
     <font place="InactiveWindow">
       <name>Source Sans Pro</name>
-      <size>12</size>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -343,7 +343,7 @@
     </keybind>
     <keybind key="F1">
       <action name="Execute">
-        <command>st</command>
+        <command>urxvt</command>
       </action>
     </keybind>
     <keybind key="F3">
@@ -351,9 +351,20 @@
         <command>~/bin/skippy-xd.sh</command>
       </action>
     </keybind>
+    <keybind key="W-F1">
+      <action name="Execute">
+        <command>urxvt -e ncmpcpp</command>
+      </action>
+    </keybind>
+    <keybind key="A-F2">
+      <action name="ToggleOmnipresent"/>
+    </keybind>
+    <keybind key="A-F3">
+      <action name="Iconify"/>
+    </keybind>
     <keybind key="C-space">
       <action name="Execute">
-        <command>j4-dmenu-desktop --dmenu='rofi -i -dmenu -p ""'</command>
+        <command>j4-dmenu-desktop</command>
       </action>
     </keybind>
     <keybind key="W-Up">

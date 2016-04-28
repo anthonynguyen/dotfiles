@@ -27,6 +27,13 @@ alias pacinf='pacman -Qi'
 alias yaoin='yaourt -S'
 alias yaosrch='yaourt -Ss'
 
+alias emin='sudo emerge -a'
+alias emupd='sudo emerge --sync'
+alias emupg='emerge -uDU --with-bdeps=y @world'
+alias emrem='sudo emerge -cav'
+alias eminf='emerge --info'
+alias emsrch='emerge -s'
+
 alias gac='git add . && git commit -m'
 alias ga='git add'
 alias gcom='git commit'
@@ -38,7 +45,7 @@ alias envi='source env/bin/activate'
 
 alias python='python3'
 
-alias grep='ag'
+#alias grep='ag'
 alias rgrep='grep -r -n'
 alias rgrepi='rgrep -i'
 
