@@ -1,29 +1,29 @@
+start-pulseaudio-x11 &
+
 DESKTOP_ENV="openbox"
 export WM="Openbox"
-~/tint2/tint2 &
+tint2 &
 
-#tp-battery-icon &
-~/dev/tp-battery-icon/tp-battery-icon.py &
+setxkbmap -option ctrl:nocaps &
+setxkbmap -option "terminate:ctrl_alt_bksp" &
 
-$HOME/dev/caffeine/bin/caffeine &
+~/sw/batterymon-clone/batterymon -t new &
+
+~/sw/caffeine/bin/caffeine &
 
 sudo ~/touchpad.sh
 
-compton -b --config ~/.compton.conf
-feh --bg-fill ~/Pictures/277H_noise.png &
+compton --backend xr_glx_hybrid --vsync opengl-swc -b --config ~/.compton.conf
+feh --bg-fill ~/Pictures/Wallpapers/wallhaven-313854-2.png &
 
 xbacklight -set 50 &
-
-eval $(gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg)
-export GNOME_KEYRING_PID
-export GNOME_KEYRING_SOCKET
-export SSH_AUTH_SOCK
-export GPG_AGENT_INFO
 
 dbus-launch nm-applet &
 
 mpd &
 mpdscribble &
+
+~/dev/mpd-tray/mpd-tray.py &
 
 dunst &
 

@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Diamond</name>
-    <titleLayout>LD</titleLayout>
+    <name>Min-Dark</name>
+    <titleLayout>CIMLD</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -336,9 +336,9 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
-    <keybind key="XF86Homepage">
+    <keybind key="XF86HomePage">
       <action name="Execute">
-        <command>opera</command>
+        <command>chromium</command>
       </action>
     </keybind>
     <keybind key="F1">
@@ -364,7 +364,7 @@
     </keybind>
     <keybind key="C-space">
       <action name="Execute">
-        <command>j4-dmenu-desktop</command>
+        <command>j4-dmenu-desktop --dmenu '~/sw/dmenu2/dmenu -dim 0.5 -i -l 5 -p "&gt;&gt;" -fn "Roboto-10" -w 400 -h 24 -x 760 -y 468 -nb "#293033" -nf "#AAAAAA" -sb "#576a6b" -sf "#FFFFFF"'</command>
       </action>
     </keybind>
     <keybind key="W-Up">
@@ -375,8 +375,8 @@
       <action name="MoveResizeTo">
         <x>0</x>
         <y>0</y>
-        <height>100%</height>
-        <width>50%</width>
+        <height>1080</height>
+        <width>960</width>
       </action>
     </keybind>
     <keybind key="W-Right">
@@ -384,8 +384,8 @@
       <action name="MoveResizeTo">
         <x>-0</x>
         <y>0</y>
-        <height>100%</height>
-        <width>50%</width>
+        <height>1080</height>
+        <width>960</width>
       </action>
     </keybind>
     <keybind key="W-A-Left">
@@ -432,9 +432,7 @@
       <action name="Reconfigure"/>
     </keybind>
     <keybind key="W-S-Escape">
-      <action name="Restart">
-        <command>/home/anthony/dev/openbox/openbox/openbox</command>
-      </action>
+      <action name="Restart"/>
     </keybind>
   </keyboard>
   <mouse>
