@@ -34,6 +34,12 @@ alias emrem='sudo emerge -cav'
 alias eminf='emerge --info'
 alias emsrch='emerge -s'
 
+alias xin='sudo xbps-install'
+alias xrem='sudo xbps-remove -R'
+alias xupd='sudo xbps-install -Su'
+alias xsrch='xbps-query -Rs'
+alias xinf='xbps-query'
+
 alias gac='git add . && git commit -m'
 alias ga='git add'
 alias gcom='git commit'
@@ -43,9 +49,6 @@ alias gl='git log'
 
 alias envi='source env/bin/activate'
 
-alias python='python3'
-
-#alias grep='ag'
 alias rgrep='grep -r -n'
 alias rgrepi='rgrep -i'
 

@@ -9,7 +9,7 @@ prompt_git() {
 		echo "±"
 	else
 		#echo ""
-		echo "%#"
+		echo "——"
 	fi
 }
 
