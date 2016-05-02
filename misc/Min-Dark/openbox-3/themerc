@@ -1,0 +1,129 @@
+# Name: Numix Openbox theme
+# Author: Satyajit Sahoo <satyajit.happy@gmail.com>
+# License: GPL-3.0+
+
+
+# Menu
+menu.border.color: #FFFFFF
+
+menu.title.bg: flat solid
+menu.title.bg.color: #293033
+menu.title.text.color: #FFFFFF
+menu.title.text.justify: center
+
+menu.items.bg: flat solid
+menu.items.bg.color: #FFFFFF
+menu.items.text.color: #444444
+menu.items.disabled.text.color: #AAAAAA
+
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #293033
+menu.items.active.text.color: #FFFFFF
+
+menu.separator.color: #CCCCCC
+menu.separator.width: 1
+menu.separator.padding.width: 2
+menu.separator.padding.height: 4
+
+
+# Active window
+window.active.border.color: #23292B
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #23292B
+window.active.title.separator.color: #23292B
+window.active.text.justify: left
+
+window.active.label.bg: parentrelative
+#window.active.label.text.color: #AECBDA
+window.active.label.text.color: #23292B
+
+window.active.handle.bg: flat solid
+window.active.handle.bg.color: #293033
+
+window.active.grip.bg: flat solid
+window.active.grip.bg.color: #293033
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.unpressed.image.color: #AECBDA
+
+window.active.button.pressed.bg: parentrelative
+window.active.button.pressed.image.color: #AECBDA
+
+window.active.button.disabled.bg: parentrelative
+window.active.button.disabled.image.color: #888888
+
+
+# Inactive window
+window.inactive.border.color: #21282B
+
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #293033
+window.inactive.title.separator.color: #293033
+window.inactive.text.justify: left
+
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #293033
+
+window.inactive.handle.bg: flat solid
+window.inactive.handle.bg.color: #FFFFFF
+
+window.inactive.grip.bg: flat solid
+window.inactive.grip.bg.color: #FFFFFF
+
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.unpressed.image.color: #526066
+
+window.inactive.button.pressed.bg: parentrelative
+window.inactive.button.pressed.image.color: #526066
+
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.disabled.bg.color: #FFFFFF
+
+
+# OSD
+osd.border.width: 1
+osd.border.color: #AAAAAA
+
+osd.bg: flat solid
+osd.bg.color: #FFFFFF
+osd.label.bg: flat solid
+osd.label.bg.color: #FFFFFF
+osd.label.text.color: #222222
+
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #293033
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #CCCCCC
+
+osd.button.unpressed.bg: flat border
+osd.button.unpressed.bg.color: #293033
+osd.button.unpressed.*.border.color: #293033
+
+osd.button.pressed.bg: flat border
+osd.button.pressed.bg.color: #293033
+osd.button.pressed.*.border.color: #293033
+
+osd.button.focused.bg: flat solid border
+osd.button.focused.bg.color: #293033
+osd.button.focused.*.border.color: #293033
+
+osd.button.focused.box.color: #293033
+
+
+# Fonts
+window.active.label.text.font:shadow=n
+window.inactive.label.text.font:shadow=n
+menu.items.font:shadow=n
+menu.title.text.font:shadow=n
+
+
+# Everything else
+border.width: 3
+padding.width: 10
+padding.height: 5
+window.handle.width: 0
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.label.text.justify: left

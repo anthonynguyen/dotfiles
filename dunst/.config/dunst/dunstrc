@@ -1,5 +1,5 @@
 [global]
-    font = Hack 10
+    font = Roboto 10
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>
@@ -111,7 +111,7 @@
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 3
+    line_height = 5
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -156,7 +156,7 @@
 
 [frame]
     width = 3
-    color = "#cccccc"
+    color = "#3E484D"
 
 [shortcuts]
 
@@ -174,20 +174,20 @@
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1".
-    history = ctrl+grave
+    #history = ctrl+grave
 
     # Context menu.
-    context = ctrl+shift+period
+    #context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#335980"
+    background = "#293033"
     foreground = "#ffffff"
     timeout = 2
 
 [urgency_normal]
-    background = "#335980"
+    background = "#293033"
     foreground = "#ffffff"
     timeout = 5
 

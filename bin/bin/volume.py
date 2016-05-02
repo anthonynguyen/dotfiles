@@ -18,7 +18,7 @@ elif action == "-":
 elif action == "mute":
 	subprocess.call(["amixer", "set", "Master", "toggle"])
 
-volumere = re.compile(r"\[(\d+)%\] \[(on|off)\]")
+volumere = re.compile(r"\[(\d+)%\].+\[(on|off)\]")
 
 ret = subprocess.check_output(["amixer"]).decode()
 

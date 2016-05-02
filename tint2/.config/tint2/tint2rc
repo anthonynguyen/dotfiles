@@ -11,7 +11,7 @@
 # ID 1
 rounded = 0
 border_width = 0
-background_color = #EEEEEE 100
+background_color = #454A4D 100
 border_color = #FFFFFF 16
 
 # ID 2
@@ -23,18 +23,19 @@ border_color = #FFFFFF 48
 # ID 3
 rounded = 0
 border_width = 0
-background_color = #335980 99
+background_color = #293033 99
 border_color = #FFFFFF 48
 
 # ID 4
 rounded = 0
 border_width = 0
-background_color = #518ECC 99
+#background_color = #335766 99
+background_color = #23292B 99
 border_color = #FFFFFF 48
 
 
 # Panel
-panel_items = ETFSEC
+panel_items = ETFSC
 panel_monitor = all
 panel_position = top center horizontal
 panel_size = 100% 32
@@ -63,7 +64,7 @@ urgent_nb_of_blink = 8
 task_icon = 0
 task_text = 1
 task_centered = 1
-task_maximum_size = 300 32
+task_maximum_size = 450 32
 task_padding = 10 2
 task_background_id = 0
 task_active_background_id = 4
@@ -78,8 +79,8 @@ task_urgent_icon_asb = 100 0 0
 task_iconified_icon_asb = 70 0 0
 
 # Fonts
-task_font = Roboto 10
-task_font_color = #777777 100
+task_font = Roboto Bold 10
+task_font_color = #888888 100
 task_active_font_color = #FFFFFF 100
 task_urgent_font_color = #FF0000 100
 task_iconified_font_color = #CCCCCC 100
@@ -89,9 +90,9 @@ font_shadow = 0
 systray = 1
 systray_padding = 8 4 7
 systray_sort = ascending
-systray_background_id = 4
-systray_icon_size = 24
-systray_icon_asb = 70 0 0
+systray_background_id = 3
+systray_icon_size = 22
+systray_icon_asb = 80 -100 0
 
 # Clock
 time1_format = %I:%M %p
@@ -148,11 +149,11 @@ execp_font_color = #FFFFFF 100
 #execp_font = Roboto 10
 #execp_font_color = #FFFFFF 100
 
-execp = new
-execp_command = ~/bin/music_parse.py
-execp_interval = 2
-execp_padding = 16 2
-execp_background_id = 4
-execp_font = Font Awesome 10
-execp_font_color = #FFFFFF 100
-execp_lclick_command = ~/bin/ncmpcpp.sh
+#execp = new
+#execp_command = ~/bin/music_parse.py
+#execp_interval = 2
+#execp_padding = 16 2
+#execp_background_id = 4
+#execp_font = Font Awesome 10
+#execp_font_color = #FFFFFF 100
+#execp_lclick_command = ~/bin/ncmpcpp.sh

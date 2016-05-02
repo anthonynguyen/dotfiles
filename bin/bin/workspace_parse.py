@@ -18,5 +18,5 @@ def resolve(n):
 while True:
 	a = input()
 	p = a.split()
-	if "_NET_CURRENT_DESKTOP" in p[0]:
+	if p and "_NET_CURRENT_DESKTOP" in p[0]:
 		print(resolve(int(p[2])))
