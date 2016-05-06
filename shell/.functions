@@ -3,19 +3,55 @@ git_branch() {
 	echo $ref
 }
 
+git_num_staged() {
+	echo $(git status --porcelain | grep "^[MADR]" | wc -l)
+}
+
+git_num_unstaged() {
+	echo $(git status --porcelain | grep "^.[MADR]" | wc -l)
+}
+
+git_num_untracked() {
+	echo $(git status --porcelain | grep "^??" | wc -l)
+}
+
+git_staged_prompt() {
+	if [[ $(git_num_staged) -gt 0 ]]; then
+		echo "+"
+	fi
+}
+
+git_unstaged_prompt() {
+	if [[ $(git_num_unstaged) -gt 0 ]]; then
+		echo "!"
+	fi
+}
+
+git_untracked_prompt() {
+	if [[ $(git_num_untracked) -gt 0 ]]; then
+		echo "?"
+	fi
+}
+
+git_files_prompt() {
+	let "total = $(git_num_staged) + $(git_num_unstaged) + $(git_num_untracked)"
+	if [[ total -gt 0 ]]; then
+		echo " [$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)] "
+	fi
+}
+
 prompt_git() {
 	if git branch >/dev/null 2>/dev/null; then
-		#echo "± [$(git_branch)]"
-		echo "±"
+		echo "%K{blue} ± $(git_branch)$(git_files_prompt) %k"
+		#echo "±"
 	else
-		#echo ""
-		echo "——"
+		echo ""
+		#echo " ——— "
 	fi
 }
 
 setprompt() {
-	#PROMPT="(%n@%F{red}%m%f)%{%F{cyan}%} %~%f %{%F{yellow}%}$(prompt_git)%f"$'\n%F{blue}➔ %#%f '
-	PROMPT="%F{cyan}%~%f %F{white}$(prompt_git)%f "
+	PROMPT="%B%K{cyan}%F{white} %~ %f%k%F{white}$(prompt_git) ——— %f%b"
 }
 
 
@@ -39,4 +75,9 @@ ws() {
 
 	ia httpd Apache
 	ia mysqld MySQL
+}
+
+docker_delete () {
+	docker rm -f $(docker ps -a -q)
+	docker rmi $(docker images -q)
 }

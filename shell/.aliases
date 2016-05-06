@@ -1,6 +1,14 @@
+
+# Platform-specific aliases
+if [[ $(uname) == "Darwin" ]]; then
+	alias ls='ls -FG'
+else
+	alias ls='ls -F --color=auto'
+fi
+
+alias ll='ls -ho'
+
 alias c='clear'
-alias ls='ls --color=auto'
-alias ll='ls -lAfh --color=auto'
 
 alias s='sudo'
 
