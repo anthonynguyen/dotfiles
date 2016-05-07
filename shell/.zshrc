@@ -40,6 +40,9 @@ bindkey "^[OF" end-of-line
 bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
 
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 bindkey "\e[2~" quoted-insert # Ins
 bindkey "\e[3~" delete-char # Del
 

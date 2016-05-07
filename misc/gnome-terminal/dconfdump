@@ -1,12 +1,12 @@
 [/]
 foreground-color='#f8f8f2'
 visible-name='Base 16 Monokai Dark'
-palette=['#272822', '#f92672', '#a6e22e', '#f4bf75', '#66d9ef', '#ae81ff', '#a1efe4', '#f8f8f2', '#75715e', '#f92672', '#a6e22e', '#f4bf75', '#66d9ef', '#ae81ff', '#a1efe4', '#f9f8f5']
+palette=['#1F2426', '#f92672', '#a6e22e', '#f4bf75', '#66d9ef', '#ae81ff', '#a1efe4', '#f8f8f2', '#75715e', '#f92672', '#a6e22e', '#f4bf75', '#66d9ef', '#ae81ff', '#a1efe4', '#f9f8f5']
 default-size-columns=100
 default-size-rows=30
 use-theme-colors=false
 use-theme-background=false
 bold-color-same-as-fg=true
 bold-color='#f8f8f2'
-background-color='#272822'
+background-color='#1F2426'
 scrollbar-policy='never'
