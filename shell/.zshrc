@@ -13,6 +13,7 @@ zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit -u
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 
