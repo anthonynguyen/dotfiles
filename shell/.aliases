@@ -1,9 +1,9 @@
 
 # Platform-specific aliases
 if [[ $(uname) == "Darwin" ]]; then
-	alias ls='ls -FG'
+	alias ls='ls -FGL'
 else
-	alias ls='ls -F --color=auto'
+	alias ls='ls -FL --color=auto'
 fi
 
 alias ll='ls -ho'
