@@ -36,7 +36,7 @@ git_untracked_prompt() {
 git_files_prompt() {
 	let "total = $(git_num_staged) + $(git_num_unstaged) + $(git_num_untracked)"
 	if [[ total -gt 0 ]]; then
-		echo " [$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)] "
+		echo " [$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)]"
 	fi
 }
 

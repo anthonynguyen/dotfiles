@@ -1,12 +1,12 @@
 
 # Platform-specific aliases
 if [[ $(uname) == "Darwin" ]]; then
-	alias ls='ls -FGL'
+	alias ls='ls -FG'
 else
-	alias ls='ls -FL --color=auto'
+	alias ls='ls -F --color=auto'
 fi
 
-alias ll='ls -ho'
+alias ll='ls -aho'
 
 alias c='clear'
 
@@ -54,6 +54,8 @@ alias gcom='git commit'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
+alias glo='git log --oneline --decorate'
+alias gg='glo --graph'
 
 alias envi='source env/bin/activate'
 
