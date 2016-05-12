@@ -12,6 +12,8 @@ alias c='clear'
 
 alias s='sudo'
 
+alias zs='source ~/.zshrc'
+
 alias zypupg='sudo zypper update'
 alias zypin='sudo zypper install'
 alias zypsrch='zypper search'
