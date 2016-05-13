@@ -51,7 +51,7 @@ prompt_git() {
 }
 
 setprompt() {
-	PROMPT="%B%K{cyan}%F{white} %~ %f%k%F{white}$(prompt_git) ─── %f%b"
+	PROMPT="%B%K{cyan}%F{white} %~ %f%k%F{white}$(prompt_git) ──╼ %f%b"
 }
 
 
