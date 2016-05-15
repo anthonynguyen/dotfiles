@@ -51,6 +51,9 @@ export EDITOR=nvim
 export PATH="$HOME/bin:$PATH"
 source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 export PAGER=/usr/bin/less
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
 export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode – bold, magenta
