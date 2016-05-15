@@ -14,6 +14,8 @@ zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit -u
 
+setopt transient_rprompt
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 
