@@ -1,5 +1,4 @@
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' format 'Completion type: %d'
