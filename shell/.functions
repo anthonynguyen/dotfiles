@@ -71,7 +71,7 @@ setprompt() {
 	fi
 
 	RPROMPT="%B%F{white}$(prompt_git)$(prompt_nvm)%b%b"
-	PROMPT="%B%F{cyan}%~%f${prompt_char}%b"
+	PROMPT="%B%F{yellow}%T %f%F{black}•%f %F{cyan}%~%f${prompt_char}%b"
 }
 
 
