@@ -46,7 +46,7 @@ prompt_git() {
 		#echo "±"
 	else
 		echo ""
-		#echo " ——— "
+		#echo " ——— "───
 	fi
 }
 
@@ -65,9 +65,9 @@ prompt_nvm() {
 
 setprompt() {
 	if [[ "$?" -ne "0" ]]; then
-		prompt_char="%F{yellow} ─!─ %f"
+		prompt_char="%F{yellow} :: %f"
 	else
-		prompt_char="%F{white} ─── %f"
+		prompt_char="%F{white} ── %f"
 	fi
 
 	RPROMPT="%B%F{white}$(prompt_git)$(prompt_nvm)%b%b"
@@ -101,3 +101,4 @@ docker_delete () {
 	docker rm -f $(docker ps -a -q)
 	docker rmi $(docker images -q)
 }
+

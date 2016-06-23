@@ -49,11 +49,14 @@ bindkey "\e[3~" delete-char # Del
 
 export EDITOR=nvim
 
-export PATH="$HOME/bin:$PATH"
+export GOPATH=~/dev/go
+export PATH="$HOME/.cargo/bin:$HOME/bin:$GOPATH/bin:$PATH"
 source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+source ~/.rvm/scripts/rvm
 
 export PAGER=/usr/bin/less
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
@@ -63,3 +66,5 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode – yellow
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

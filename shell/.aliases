@@ -60,6 +60,9 @@ alias gl='git log'
 alias glo='git log --oneline --decorate'
 alias gg='glo --graph'
 
+alias gotest='go test -v -cover'
+alias gocover='go test -v -coverprofile=coverage.out; go tool cover -html=coverage.out; rm coverage.out'
+
 alias envi='source env/bin/activate'
 
 alias rgrep='grep -r -n'
