@@ -1,11 +1,11 @@
 # Platform-specific aliases
-if [[ $(uname) == "Darwin" ]]; then
+if [ (uname) = "Darwin" ]
 	# brew install coreutils
 	alias ls='gls -F --color=auto --group-directories-first'
 	#alias ls='ls -FG'
 else
 	alias ls='ls -F --color=auto --group-directories-first'
-fi
+end
 
 alias ll='ls -Aho'
 
@@ -51,7 +51,7 @@ alias xupd='sudo xbps-install -Su'
 alias xsrch='xbps-query -Rs'
 alias xinf='xbps-query'
 
-alias gac='git add . && git commit -m'
+alias gac='git add .; and git commit -m'
 alias ga='git add'
 alias gcom='git commit'
 alias gs='git status'

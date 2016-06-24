@@ -13,7 +13,6 @@ zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit -u
 
-setopt transient_rprompt
 
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
@@ -25,9 +24,16 @@ done
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
-setopt appendhistory autocd beep
+setopt appendhistory autocd
 setopt inc_append_history
 bindkey -e
+
+unsetopt beep
+setopt transient_rprompt
+unsetopt ignoreeof
+setopt print_exit_value
+
+
 # End of lines configured by zsh-newuser-install
 
 autoload -U colors
@@ -52,6 +58,7 @@ export EDITOR=nvim
 export GOPATH=~/dev/go
 export PATH="$HOME/.cargo/bin:$HOME/bin:$GOPATH/bin:$PATH"
 source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/sw/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
