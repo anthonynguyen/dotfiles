@@ -1,23 +1,17 @@
 # The following lines were added by compinstall
-# zstyle ':completion:*' completer _expand _complete _ignored
-# zstyle ':completion:*' file-sort modification
-# zstyle ':completion:*' format 'Completion type: %d'
-# zstyle ':completion:*' group-name ''
-# zstyle ':completion:*' list-colors ''
-# zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
-# zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
-# zstyle ':completion:*' menu select=1
-# zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-# zstyle :compinstall filename '$HOME/.zshrc'
-
-# autoload -Uz compinit
-# compinit -u
-
 zstyle ':completion:*' completer _expand _complete _ignored
-zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*' format 'Completion type: %d'
+zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle :compinstall filename '$HOME/.zshrc'
+
+autoload -Uz compinit
+compinit -u
 
 source ~/dev/waypoints/waypoints.zsh
 fpath=(~/dev/waypoints $fpath)

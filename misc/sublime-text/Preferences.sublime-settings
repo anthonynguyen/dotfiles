@@ -1,0 +1,62 @@
+{
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": false,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 2,
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium) NDC.tmTheme",
+	"copy_with_empty_selection": false,
+	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": true,
+	"find_selected_text": true,
+	"font_face": "Fira Mono",
+	"font_size": 12,
+	"gruvbox_accent_blue": true,
+	"gruvbox_colored_tooltips": true,
+	"gruvbox_disable_command_palette_row_border": true,
+	"gruvbox_disable_faded_file_icons": true,
+	"gruvbox_enable_panel_close_button": true,
+	"gruvbox_folder_icons_spacegray": true,
+	"gruvbox_highlight_active_buttons": true,
+	"gruvbox_highlight_active_tree_row": true,
+	"gruvbox_scrollbar_width_l": true,
+	"gruvbox_sidebar_compact": true,
+	"gruvbox_tabs_xs": true,
+	"gruvbox_underline_modified_tabs_thick": true,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"index_files": false,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"material_theme_accent_cyan": true,
+	"material_theme_compact_panel": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_disable_folder_animation": true,
+	"material_theme_small_tab": false,
+	"material_theme_tabs_autowidth": true,
+	"material_theme_tree_headings": true,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		80
+	],
+	"scroll_past_end": true,
+	"show_full_path": true,
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"theme_accent_cyan": true,
+	"theme_bar": true,
+	"theme_icons_atomized": true,
+	"theme_sidebar_border": true,
+	"theme_tab_arrows_hidden": true,
+	"theme_tab_selected_underlined": true,
+	"theme_tab_separator": true,
+	"theme_tab_size_xl": true
+}
