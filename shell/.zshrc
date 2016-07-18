@@ -18,6 +18,9 @@ zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' list-colors ''
 zstyle :compinstall filename '$HOME/.zshrc'
 
+source ~/dev/waypoints/waypoints.zsh
+fpath=(~/dev/waypoints $fpath)
+
 autoload -Uz compinit
 compinit
 
