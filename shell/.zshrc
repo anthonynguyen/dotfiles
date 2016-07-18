@@ -14,7 +14,7 @@ autoload -Uz compinit
 compinit -u
 
 source ~/dev/waypoints/waypoints.zsh
-fpath=(~/dev/waypoints $fpath)
+fpath=(~/.zsh-completions ~/dev/waypoints ~/sw/zsh-completions $fpath)
 
 autoload -Uz compinit
 compinit
