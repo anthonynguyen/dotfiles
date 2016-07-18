@@ -1,6 +1,5 @@
 git_branch() {
-	ref=$(git symbolic-ref HEAD | cut -d'/' -f3)
-	echo $ref
+	echo $(git branch | sed -n '/\* /s///p')
 }
 
 git_num_staged() {
@@ -64,14 +63,15 @@ prompt_nvm() {
 }
 
 setprompt() {
+	# •
 	if [[ "$?" -ne "0" ]]; then
-		prompt_char="%F{yellow} :: %f"
+		prompt_dot="%F{red}●%f"
 	else
-		prompt_char="%F{white} ── %f"
+		prompt_dot="%F{black}●%f"
 	fi
 
 	RPROMPT="%B%F{white}$(prompt_git)$(prompt_nvm)%b%b"
-	PROMPT="%B%F{yellow}%T %f%F{black}•%f %F{cyan}%~%f${prompt_char}%b"
+	PROMPT="%B${prompt_dot} %F{yellow}%T %f%F{black}-%f %F{cyan}%~%f%F{white} ── %f%b"
 }
 
 
