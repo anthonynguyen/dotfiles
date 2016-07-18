@@ -10,8 +10,9 @@ fi
 alias ll='ls -Aho'
 
 alias c='clear'
-
 alias s='sudo'
+
+alias fsize='du -sh'
 
 alias zs='source ~/.zshrc'
 

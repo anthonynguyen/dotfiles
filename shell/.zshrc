@@ -1,45 +1,44 @@
 # The following lines were added by compinstall
+# zstyle ':completion:*' completer _expand _complete _ignored
+# zstyle ':completion:*' file-sort modification
+# zstyle ':completion:*' format 'Completion type: %d'
+# zstyle ':completion:*' group-name ''
+# zstyle ':completion:*' list-colors ''
+# zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+# zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+# zstyle ':completion:*' menu select=1
+# zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+# zstyle :compinstall filename '$HOME/.zshrc'
+
+# autoload -Uz compinit
+# compinit -u
+
 zstyle ':completion:*' completer _expand _complete _ignored
-zstyle ':completion:*' file-sort modification
-zstyle ':completion:*' format 'Completion type: %d'
-zstyle ':completion:*' group-name ''
+zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
-compinit -u
+compinit
 
-
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-
-for f in ~/.{aliases,functions}; do
+for f in ~/.{functions,aliases}.zsh; do
 	source "$f"
 done
 
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
+
 setopt appendhistory autocd
 setopt inc_append_history
-bindkey -e
-
-unsetopt beep
 setopt transient_rprompt
-unsetopt ignoreeof
 setopt print_exit_value
 
-
-# End of lines configured by zsh-newuser-install
+unsetopt beep
+unsetopt ignoreeof
 
 autoload -U colors
 colors
-
-setprompt
 
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
@@ -55,15 +54,37 @@ bindkey "\e[3~" delete-char # Del
 
 export EDITOR=nvim
 
-export GOPATH=~/dev/go
-export PATH="$HOME/.cargo/bin:$HOME/bin:$GOPATH/bin:$PATH"
-source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/sw/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -d $HOME/dev/go ]]; then
+	export GOPATH=~/dev/go
+	export PATH="$GOPATH/bin:$PATH"
+fi
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if [[ -d $HOME/.cargo ]]; then
+	export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
-source ~/.rvm/scripts/rvm
+if [[ -d $HOME/bin ]]; then
+	export PATH="$HOME/bin:$PATH"
+fi
+
+if [[ -d $HOME/sw/zsh-syntax-highlighting ]]; then
+	source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# NVM and RVM make startup really slow
+# 0.05s -> 0.41s
+
+# if [[ -d ~/.nvm ]]; then
+# 	export NVM_DIR=~/.nvm
+# 	if brew > /dev/null 2>/dev/null; then
+# 		source $(brew --prefix nvm)/nvm.sh
+# 	fi
+# fi
+
+# if [[ -d ~/.rvm ]]; then
+# 	source ~/.rvm/scripts/rvm
+# 	export PATH="$PATH:$HOME/.rvm/bin"
+# fi
 
 export PAGER=/usr/bin/less
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
@@ -73,5 +94,3 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode – yellow
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
