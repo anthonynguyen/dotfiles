@@ -16,6 +16,7 @@
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=1
 zstyle :compinstall filename '$HOME/.zshrc'
 
 source ~/dev/waypoints/waypoints.zsh
