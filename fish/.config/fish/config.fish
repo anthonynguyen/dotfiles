@@ -39,3 +39,10 @@ set fish_pager_color_description 555\x1eyellow
 set fish_pager_color_prefix cyan
 set fish_pager_color_progress cyan
 
+
+set GOPATH ~/dev/go
+set -x GOPATH $GOPATH
+set PATH $HOME/.cargo/bin $HOME/bin $GOPATH/bin $PATH
+
+
+cd ~

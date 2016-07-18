@@ -63,7 +63,7 @@ alias gg='glo --graph'
 alias gotest='go test -v -cover'
 alias gocover='go test -v -coverprofile=coverage.out; go tool cover -html=coverage.out; rm coverage.out'
 
-alias envi='source env/bin/activate'
+alias envi='. env/bin/activate.fish'
 
 alias rgrep='grep -r -n'
 alias rgrepi='rgrep -i'
