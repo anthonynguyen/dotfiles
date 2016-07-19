@@ -35,43 +35,25 @@ git_untracked_prompt() {
 git_files_prompt() {
 	let "total = $(git_num_staged) + $(git_num_unstaged) + $(git_num_untracked)"
 	if [[ total -gt 0 ]]; then
-		echo " [$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)]"
+		echo "$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)"
 	fi
 }
 
 prompt_git() {
 	if git branch > /dev/null 2>/dev/null; then
-		echo "%F{magenta} ± $(git_branch)$(git_files_prompt)%f"
-		#echo "±"
-	else
-		echo ""
-		#echo " ——— "───
+		echo "%F{magenta} $(git_branch)$(git_files_prompt)%f%F{black} •%f"
 	fi
-}
-
-prompt_nvm() {
-	command -v nvm > /dev/null 2>&1 || return
-	nvm_version=$(nvm current 2>/dev/null)
-	[[ ${nvm_version} == "system" ]] && return
-	if git branch > /dev/null 2>/dev/null; then
-		slash="%F{black} •%f"
-	else
-		slash=""
-	fi
-	echo "${slash}%F{green} ${nvm_version}%f"
-	# ⬢
 }
 
 setprompt() {
-	# •
 	if [[ "$?" -ne "0" ]]; then
-		prompt_dot="%F{red}●%f"
+		prompt_dot="%F{red}★%f"
 	else
-		prompt_dot="%F{black}●%f"
+		prompt_dot="%F{white}★%f"
 	fi
 
-	RPROMPT="%B%F{white}$(prompt_git)$(prompt_nvm)%b%b"
-	PROMPT="%B${prompt_dot} %F{yellow}%T %f%F{black}-%f %F{cyan}%~%f%F{white} ── %f%b"
+	RPROMPT="%B%F{white}$(prompt_git)%F{yellow} %T%f%f%b"
+	PROMPT="%B ${prompt_dot}  %F{cyan}%~%f%b %F{yellow}%# %f"
 }
 
 
