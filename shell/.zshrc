@@ -13,8 +13,18 @@ zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit -u
 
-source ~/dev/waypoints/waypoints.zsh
-fpath=(~/.zsh-completions ~/dev/waypoints ~/sw/zsh-completions $fpath)
+if [[ -d $HOME/dev/waypoints ]]; then
+	source $HOME/dev/waypoints/waypoints.zsh
+	fpath=(~/.zsh-completions ~/dev/waypoints ~/sw/zsh-completions $fpath)
+fi
+
+if [[ -d $HOME/sw/zsh-completions ]]; then
+	fpath=($HOME/sw/zsh-completions $fpath)
+fi
+
+if [[ -d $HOME/.zsh-completions ]]; then
+	fpath=($HOME/.zsh-completions $fpath)
+fi
 
 autoload -Uz compinit
 compinit
