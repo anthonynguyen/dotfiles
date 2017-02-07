@@ -47,17 +47,18 @@ prompt_git() {
 
 setprompt() {
 	if [[ "$?" -ne "0" ]]; then
-		prompt_dot="%F{red}★%f"
+		# ★ ☀
+		prompt_dot="%F{red}★ %f"
 		prompt_char="%F{red}%#%f"
 	else
-		prompt_dot="%F{white}★%f"
+		prompt_dot="%F{white}★ %f"
 		prompt_char="%F{white}%#%f"
 	fi
 
 
 
 	RPROMPT="%B%F{white}$(prompt_git)%F{yellow} %T%f%f%b"
-	PROMPT="%B ${prompt_dot}  %F{cyan}%~%f%b ${prompt_char} "
+	PROMPT="%B ${prompt_dot} %F{cyan}%~%f%b ${prompt_char} "
 }
 
 
@@ -90,4 +91,9 @@ docker_init () {
 docker_delete () {
 	docker rm -f $(docker ps -a -q)
 	docker rmi $(docker images -q)
+}
+
+kube_rs() {
+	kubectl delete -f $1
+	kubectl create -f $1
 }

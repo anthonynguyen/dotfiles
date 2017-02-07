@@ -15,19 +15,19 @@ compinit -u
 
 if [[ -d $HOME/dev/waypoints ]]; then
 	source $HOME/dev/waypoints/waypoints.zsh
-	fpath=(~/.zsh-completions ~/dev/waypoints ~/sw/zsh-completions $fpath)
+	fpath=(~/dev/waypoints $fpath)
 fi
 
-if [[ -d $HOME/sw/zsh-completions ]]; then
-	fpath=($HOME/sw/zsh-completions $fpath)
-fi
+# if [[ -d $HOME/sw/zsh-completions ]]; then
+# 	fpath=($HOME/sw/zsh-completions $fpath)
+# fi
 
-if [[ -d $HOME/.zsh-completions ]]; then
-	fpath=($HOME/.zsh-completions $fpath)
-fi
+# if [[ -d $HOME/.zsh-completions ]]; then
+# 	fpath=($HOME/.zsh-completions $fpath)
+# fi
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+compinit -u
 
 for f in ~/.{functions,aliases}.zsh; do
 	source "$f"
@@ -60,6 +60,8 @@ bindkey '^[[F' end-of-line
 bindkey "\e[2~" quoted-insert # Ins
 bindkey "\e[3~" delete-char # Del
 
+bindkey '^R' history-incremental-search-backward
+
 export EDITOR=nvim
 
 if [[ -d $HOME/dev/go ]]; then
@@ -75,8 +77,18 @@ if [[ -d $HOME/bin ]]; then
 	export PATH="$HOME/bin:$PATH"
 fi
 
+if [[ -d $HOME/.local/bin ]]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [[ -d $HOME/sw/zsh-syntax-highlighting ]]; then
 	source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if which ruby >/dev/null && which gem >/dev/null; then
+	export GEM_HOME="$(ruby -rubygems -e 'puts Gem.user_dir')"
+	export GEM_PATH="$GEM_HOME:/var/lib/gems/2.3.0"
+	export PATH="$GEM_HOME/bin:$PATH"
 fi
 
 # NVM and RVM make startup really slow
