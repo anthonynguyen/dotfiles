@@ -9,6 +9,10 @@ set scrolloff=30
 syntax on
 set hidden
 
+" This is for st, see here: https://github.com/neovim/neovim/issues/3211
+map <F1> <del>
+map! <F1> <del>
+
 command W w
 command Q q
 
@@ -24,7 +28,8 @@ set ignorecase
 set smartcase
 set hlsearch
 
-nmap \q :nohlsearch<CR>
+nmap \h :nohlsearch<CR>
+nmap \q :q<CR>
 
 nmap j gj
 nmap k gk

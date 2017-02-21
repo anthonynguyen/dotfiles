@@ -12,4 +12,5 @@ git clone https://github.com/itchyny/lightline.vim
 git clone https://github.com/tpope/vim-fugitive
 git clone https://github.com/bling/vim-bufferline
 git clone https://github.com/scrooloose/nerdtree
+git clone https://github.com/easymotion/vim-easymotion
 
