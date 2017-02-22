@@ -1,13 +1,25 @@
+execute pathogen#infect()
+
 set autoindent
-set tabstop=5
+set tabstop=4
 set softtabstop=4
-"set colorcolumn=80
+set shiftwidth=4
 set expandtab
+
 set number
 set relativenumber
+
 set scrolloff=30
-syntax on
 set hidden
+
+set lazyredraw
+set noshowmode
+
+set termguicolors
+colorscheme gruvbox
+syntax on
+
+set bg=dark
 
 " This is for st, see here: https://github.com/neovim/neovim/issues/3211
 map <F1> <del>
@@ -23,13 +35,30 @@ command VSP vsp
 command Sp sp
 command SP sp
 
+set splitbelow
+set splitright
+
+nmap <leader>= :vertical resize +5<CR>
+nmap <leader>- :vertical resize -5<CR>
+nmap <leader>] :resize +5<CR>
+nmap <leader>[ :resize -5<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+
+set fillchars=vert:│
+
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
 
-nmap \h :nohlsearch<CR>
-nmap \q :q<CR>
+nmap <leader>h :nohlsearch<CR>
+nmap <leader>q :q<CR>
+nmap <leader>w :bd<CR>
+
+nmap <leader>n :call NumberToggle()<CR>
+nmap <leader>s :call ScrollToggle()<CR>
 
 nmap j gj
 nmap k gk
@@ -51,8 +80,6 @@ function! NumberToggle()
   endif
 endfunc
 
-nmap \n :call NumberToggle()<CR>
-
 function! ScrollToggle()
   if(&scrolloff != 0)
     set scrolloff=0
@@ -61,26 +88,42 @@ function! ScrollToggle()
   endif
 endfunc
 
-nmap \s :call ScrollToggle()<CR>
-
-execute pathogen#infect()
+"""""""""""""""""""""""""""""""""""""""""""""""""""'
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'enable': { 'statusline': 1, 'tabline': 1 },
+      \ 'colorscheme': 'default',
       \ 'active': {
-      \   'left': [ ['mode', 'paste'], ['fugitive', 'bufferline'] ],
-      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'readonly', 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'left': [ ['mode', 'paste'], ['fname']],
+      \   'right': [ [ 'lineinfo' ],  [ 'readonly', 'filetype' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'fname' ] ],
+      \   'right': [ [ 'lineinfo' ] ],
+      \ },
+      \ 'tabline': {
+      \   'left': [ [ 'tabs' ] ],
+      \   'right': [ [ 'close' ] ],
+      \ },
+      \ 'tab': {
+      \   'active': [ 'tabnum', 'filename', 'modified' ],
+      \   'inactive': [ 'tabnum', 'filename', 'modified' ],
       \ },
       \ 'component': {
-      \   'fugitive': '± %{exists("*fugitive#head")?fugitive#head():""}',
-      \   'bufferline': '%{bufferline#refresh_status()}%{g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after}'
+      \   'fname': '%F',
       \ },
-      \ 'component_visible_condition': {
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
       \ }
 
-let g:bufferline_echo = 0
+let g:buftabline_numbers = 1
+let g:buftabline_indicators = 1
+let g:buftabline_show = 2
 
-map \t :NERDTreeToggle<CR>
+let g:filebeagle_show_hidden = 1
+let g:filebeagle_show_line_numbers = 1
 
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+let g:ctrlp_show_hidden = 1

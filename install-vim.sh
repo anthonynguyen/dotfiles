@@ -9,8 +9,7 @@ cd ~/.config/nvim/bundle
 
 git clone https://github.com/tpope/vim-sensible
 git clone https://github.com/itchyny/lightline.vim
-git clone https://github.com/tpope/vim-fugitive
-git clone https://github.com/bling/vim-bufferline
-git clone https://github.com/scrooloose/nerdtree
-git clone https://github.com/easymotion/vim-easymotion
-
+git clone https://github.com/jeetsukumaran/vim-filebeagle
+git clone https://github.com/ctrlpvim/ctrlp.vim
+git clone https://github.com/morhetz/gruvbox
+git clone https://github.com/ap/vim-buftabline
