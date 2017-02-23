@@ -54,7 +54,6 @@ set smartcase
 set hlsearch
 
 nmap <leader>h :nohlsearch<CR>
-nmap <leader>q :q<CR>
 nmap <leader>w :bd<CR>
 
 nmap <leader>n :call NumberToggle()<CR>
@@ -126,4 +125,3 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-let g:ctrlp_show_hidden = 1
