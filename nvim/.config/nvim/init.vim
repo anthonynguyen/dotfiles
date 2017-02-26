@@ -15,8 +15,8 @@ set hidden
 set lazyredraw
 set noshowmode
 
-set termguicolors
-colorscheme gruvbox
+" set termguicolors
+colorscheme noctu
 syntax on
 
 set bg=dark
