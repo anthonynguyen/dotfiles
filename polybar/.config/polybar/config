@@ -1,0 +1,197 @@
+[colours]
+bright = #ffffff
+dim = #77FFFFFF
+green = #00ff00
+red = #ff0000
+
+[bar/main]
+; monitor= $ xrandr -q | grep " connected" | cut -d ' ' -f1
+height = 30
+background = #222222
+padding = 1
+separator = "  "
+modules-left =
+modules-center = desktop
+modules-right = ethernet wifi volume battery battery2 clock
+overline-size = 2
+
+font-0 = "Fira Code:size=10"
+font-1 = "Font Awesome:size=10"
+font = 1
+
+tray-position = left
+tray-maxsize = 24
+
+[bar/work1]
+monitor = DP2-3
+height = 30
+background = #222222
+padding = 1
+separator = "  "
+modules-left =
+modules-center = bspwm
+modules-right = ethernet wifi volume battery battery2 clock
+overline-size = 2
+
+font-0 = "Fira Code:size=10"
+font-1 = "Font Awesome:size=10"
+font = 1
+
+[bar/work2]
+monitor = DP2-1
+height = 30
+background = #222222
+padding = 1
+separator = "  "
+modules-left =
+modules-center = bspwm
+modules-right = ethernet wifi volume battery battery2 clock
+overline-size = 2
+
+font-0 = "Fira Code:size=10"
+font-1 = "Font Awesome:size=10"
+font = 1
+
+tray-position = left
+tray-maxsize = 24
+
+[bar/work3]
+monitor = DP2-2
+height = 30
+background = #222222
+padding = 1
+separator = "  "
+modules-left =
+modules-center = bspwm
+modules-right = ethernet wifi volume battery battery2 clock
+overline-size = 2
+
+font-0 = "Fira Code:size=10"
+font-1 = "Font Awesome:size=10"
+font = 1
+
+[module/desktop]
+type = internal/xworkspaces
+pin-workspaces = true
+label-active-foreground = ${colours.bright}
+label-occupied-foreground = ${colours.dim}
+label-urgent-foreground = ${colours.dim}
+label-empty-foreground = ${colours.dim}
+label-active-overline = ${colours.bright}
+label-active = " %name% "
+label-occupied = " %name% " 
+label-urgent = " %name%! "
+label-empty = " %name% "
+
+[module/title]
+type = internal/xwindow
+label = %title%
+label-maxlen = 100
+
+[module/clock]
+type = internal/date
+date = "%b %d, %l:%M %P"
+format-prefix = " " 
+format-prefix-foreground = ${colours.dim}
+interval = 1
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+
+format-charging = <ramp-capacity> <label-charging>
+format-charging-suffix = +
+format-charging-foreground = ${colours.green}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-suffix = -
+
+ramp-capacity-foreground = ${colours.dim}
+ramp-capacity-0-foreground = ${colours.red}
+ramp-capacity-1-foreground = ${colours.red}
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+
+[module/battery2]
+type = internal/battery
+full-at = 99
+battery = BAT1
+
+format-charging = <ramp-capacity> <label-charging>
+format-charging-suffix = +
+format-charging-foreground = ${colours.green}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-suffix = -
+
+ramp-capacity-foreground = ${colours.dim}
+ramp-capacity-0-foreground = ${colours.red}
+ramp-capacity-1-foreground = ${colours.red}
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+
+
+[module/volume]
+type = internal/volume
+master-soundcard = default
+master-mixer = Master
+mapping = false
+
+format-volume = <ramp-volume> <label-volume>
+format-muted = <ramp-volume> <label-muted>
+
+label-muted = muted
+
+ramp-volume-foreground = ${colours.dim}
+ramp-volume-0-foregorund = ${colours.red}
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-3 = ""
+
+[module/wifi]
+type = internal/network
+interface = wlp4s0
+format-connected = <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colours.dim}
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+label-disconnected = " "
+format-disconnected-foreground = ${colours.red}
+
+[module/ethernet]
+type = internal/network
+interface = enp0s31f6
+format-connected = <label-connected>
+label-connected = ""
+format-connected-foreground = ${colours.dim}
+
+format-disconnected = <label-disconnected>
+label-disconnected = ""
+format-disconnected-foreground = ${colours.red}
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
+enable-click = true
+
+label-focused-foreground = ${colours.bright}
+label-occupied-foreground = ${colours.dim}
+label-urgent-foreground = ${colours.dim}
+label-empty-foreground = ${colours.dim}
+label-focused-overline = ${colours.bright}
+label-focused = " %name% "
+label-occupied = " %name%." 
+label-urgent = " %name%!"
+label-empty = " %name% "
+
+
