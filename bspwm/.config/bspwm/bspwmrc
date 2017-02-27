@@ -2,24 +2,12 @@
 
 ~/.config/bspwm/settings
 
-xbacklight -set 40 &
-
-trayer  --edge bottom --align left --height 24 --transparent true --alpha 255 --expand true &
-
 sxhkd &
 
-nm-applet &
-cbatticon -n &
-volumeicon &
-
-#light-locker &
-
-#compton -bcfG -l -11 -t -11 -r 8 -D 2 -I 0.06 -O 0.06
+polybar -r main &
+compton -bcG -l -11 -t -11 -r 10 --shadow-exclude 'name = "Polybar tray window"'
 
 xrdb ~/.Xresources
-
 nitrogen --restore &
 
-export PANEL_FIFO=/home/anthony/.panel-fifo
-
-~/.config/bspwm/panel &
+nm-applet &
