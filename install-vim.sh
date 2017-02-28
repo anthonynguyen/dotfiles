@@ -14,3 +14,4 @@ git clone https://github.com/ctrlpvim/ctrlp.vim
 git clone https://github.com/morhetz/gruvbox
 git clone https://github.com/ap/vim-buftabline
 git clone https://github.com/noahfrederick/vim-noctu
+git clone https://github.com/sheerun/vim-polyglot
