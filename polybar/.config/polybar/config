@@ -79,7 +79,7 @@ pin-workspaces = true
 strip-wsnumbers = false
 
 label-focused = " %name% "
-label-focused-background = ${colours.color1}
+label-focused-background = ${colours.color5}
 
 label-unfocused = " %name% "
 
