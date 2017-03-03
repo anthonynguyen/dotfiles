@@ -29,7 +29,7 @@ fi
 # autoload -Uz compinit
 compinit -u
 
-for f in ~/.{functions,aliases}.zsh; do
+for f in ~/.{functions,aliases,custom}.zsh; do
 	source "$f"
 done
 
