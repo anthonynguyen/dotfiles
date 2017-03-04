@@ -1,11 +1,4 @@
-# Platform-specific aliases
-if [[ $(uname) == "Darwin" ]]; then
-	# brew install coreutils
-	alias ls='gls -F --color=auto --group-directories-first'
-	#alias ls='ls -FG'
-else
-	alias ls='ls -F --color=auto --group-directories-first'
-fi
+alias ls='ls -F --color=auto --group-directories-first'
 
 alias ll='ls -Aho'
 
