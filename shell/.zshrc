@@ -64,8 +64,9 @@ bindkey '^R' history-incremental-search-backward
 
 export EDITOR=nvim
 
-if [[ -d $HOME/dev/go ]]; then
-	export GOPATH=~/dev/go
+if [[ -d $HOME/go ]]; then
+    export PATH="$PATH:/usr/local/go/bin"
+	export GOPATH=~/go
 	export PATH="$GOPATH/bin:$PATH"
 fi
 
@@ -90,21 +91,6 @@ if which ruby >/dev/null && which gem >/dev/null; then
 	export GEM_PATH="$GEM_HOME:/var/lib/gems/2.3.0"
 	export PATH="$GEM_HOME/bin:$PATH"
 fi
-
-# NVM and RVM make startup really slow
-# 0.05s -> 0.41s
-
-# if [[ -d ~/.nvm ]]; then
-# 	export NVM_DIR=~/.nvm
-# 	if brew > /dev/null 2>/dev/null; then
-# 		source $(brew --prefix nvm)/nvm.sh
-# 	fi
-# fi
-
-# if [[ -d ~/.rvm ]]; then
-# 	source ~/.rvm/scripts/rvm
-# 	export PATH="$PATH:$HOME/.rvm/bin"
-# fi
 
 export PAGER=/usr/bin/less
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
