@@ -45,6 +45,13 @@ prompt_git() {
 	fi
 }
 
+kube_ctx() {
+	CONTEXT=$(cat ~/.kube/config | grep current-context | cut -f 2 -d " ")
+	if [ -n "$CONTEXT" ]; then
+        echo "%F{red} $CONTEXT%f%F{black} •%f"
+    fi
+}
+
 setprompt() {
 	if [[ "$?" -ne "0" ]]; then
 		# ★ ☀
@@ -55,9 +62,7 @@ setprompt() {
 		prompt_char="%F{white}%#%f"
 	fi
 
-
-
-	RPROMPT="%B%F{white}$(prompt_git)%F{yellow} %T%f%f%b"
+	RPROMPT="%B%F{white}$(kube_ctx)$(prompt_git)%F{yellow} %T%f%f%b"
 	PROMPT="%B ${prompt_dot} %F{cyan}%~%f%b ${prompt_char} "
 }
 
