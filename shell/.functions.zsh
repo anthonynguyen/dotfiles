@@ -112,6 +112,14 @@ docker_delete () {
 	docker rmi $(docker images -q)
 }
 
+kuben() {
+	if [[ -z $KUBE_NAMESPACE ]]; then
+		kubectl "$@"
+	else
+		kubectl -n $KUBE_NAMESPACE "$@"
+	fi
+}
+
 kube_rs() {
 	kubectl delete -f $1
 	kubectl create -f $1
