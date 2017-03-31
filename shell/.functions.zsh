@@ -41,29 +41,43 @@ git_files_prompt() {
 
 prompt_git() {
 	if git branch > /dev/null 2>/dev/null; then
-		echo "%F{magenta} $(git_branch)$(git_files_prompt)%f%F{black} •%f"
+		echo "$dot%F{magenta}$(git_branch)$(git_files_prompt)%f"
 	fi
 }
 
-kube_ctx() {
+prompt_kubectl() {
+	if [[ $KUBE_PROMPT_ENABLE -eq 0 ]]; then
+		return
+	fi
+
 	CONTEXT=$(cat ~/.kube/config | grep current-context | cut -f 2 -d " ")
 	if [ -n "$CONTEXT" ]; then
-        echo "%F{red} $CONTEXT%f%F{black} •%f"
+        echo "$dot%F{blue}$CONTEXT%f"
     fi
 }
 
+kp() {
+	KUBE_PROMPT_ENABLE=1
+}
+KUBE_PROMPT_ENABLE=0
+
 setprompt() {
-	if [[ "$?" -ne "0" ]]; then
+	last_status=$?
+
+	# •
+	dot="%F{black} ◦ %f"
+
+	if [[ "$last_status" -ne "0" ]]; then
 		# ★ ☀
-		prompt_dot="%F{red}★ %f"
-		prompt_char="%F{red}%#%f"
+		prompt_char="%F{red}★%f"
+		prompt_status="$dot%F{red}x$last_status%f"
 	else
-		prompt_dot="%F{white}★ %f"
-		prompt_char="%F{white}%#%f"
+		prompt_char="%F{white}★%f"
+		prompt_status=""
 	fi
 
-	RPROMPT="%B%F{white}$(kube_ctx)$(prompt_git)%F{yellow} %T%f%f%b"
-	PROMPT="%B ${prompt_dot} %F{cyan}%~%f%b ${prompt_char} "
+	print -P "%B%F{yellow}%T%f$prompt_status$dot%F{cyan}%~%f$(prompt_git)$(prompt_kubectl)%b"
+	PROMPT="%B ${prompt_char}%b "
 }
 
 
