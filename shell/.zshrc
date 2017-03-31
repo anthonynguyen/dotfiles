@@ -13,6 +13,11 @@ zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit -u
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
 if [[ -d $HOME/dev/waypoints ]]; then
 	source $HOME/dev/waypoints/waypoints.zsh
 	fpath=(~/dev/waypoints $fpath)
