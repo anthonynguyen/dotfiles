@@ -34,16 +34,16 @@ URxvt.cursorBlink: 1
 URxvt.iso14755: true
 URxvt.iso14755_52: false
 
-URxvt.letterSpace: -1
+! URxvt.letterSpace: -1
 
 URxvt.internalBorder: 4
 
 URxvt.urgentOnBell: True
 
-URxvt*font: xft:SFMono:size=9:antialias=true:autohint=true
-URxvt*boldFont: xft:SFMono:bold:size=9:antialias=true:autohint=true
-URxvt*italicFont: xft:SFMono:italic:size=9:antialias=true:autohint=true
-URxvt*bolditalicFont: xft:SFMono:bold:italic:size=9:antialias=true:autohint=true
+URxvt*font: xft:Fantasque Sans Mono:size=11:antialias=true:autohint=true
+URxvt*boldFont: xft:Fantasque Sans Mono:bold:size=11:antialias=true:autohint=true
+URxvt*italicFont: xft:Fantasque Sans Mono:italic:size=11:antialias=true:autohint=true
+URxvt*bolditalicFont: xft:Fantasque Sans Mono:bold:italic:size=11:antialias=true:autohint=true
 
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
