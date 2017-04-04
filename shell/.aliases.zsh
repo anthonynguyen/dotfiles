@@ -59,6 +59,8 @@ alias gocover='go test -v -coverprofile=coverage.out; go tool cover -html=covera
 
 alias envi='source env/bin/activate'
 
+alias hsg='history 0 | ag'
+
 alias rgrep='grep -r -n'
 alias rgrepi='rgrep -i'
 
