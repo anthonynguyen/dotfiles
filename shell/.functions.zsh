@@ -16,7 +16,11 @@ prompt_kubectl() {
 }
 
 kp() {
-	KUBE_PROMPT_ENABLE=1
+	if [ $KUBE_PROMPT_ENABLE = "0" ]; then
+		KUBE_PROMPT_ENABLE=1
+	else
+		KUBE_PROMPT_ENABLE=0
+	fi
 }
 KUBE_PROMPT_ENABLE=0
 
@@ -71,10 +75,19 @@ docker_delete () {
 }
 
 kuben() {
-	if [[ -z $KUBE_NAMESPACE ]]; then
+	local kube_namespace=$(cat ~/.kube_namespace)
+	if [[ -z $kube_namespace ]]; then
 		kubectl "$@"
 	else
-		kubectl -n $KUBE_NAMESPACE "$@"
+		kubectl -n $kube_namespace "$@"
+	fi
+}
+
+kube_namespace() {
+	if [ "$#" -ne 1 ]; then
+		cat ~/.kube_namespace
+	else
+		echo "$1" > ~/.kube_namespace
 	fi
 }
 
