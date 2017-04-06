@@ -71,7 +71,8 @@ exec --no-startup-id compton -bcG -l -11 -t -11 -r 10 --shadow-exclude 'name = "
 exec --no-startup-id polybar -r main
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xautolock -time 5 -notify 120 -notifier "notify-send 'Locking screen in 2 minutes'" -locker "$HOME/.config/i3/lock.sh"
+# exec --no-startup-id xautolock -time 5 -notify 120 -notifier "notify-send 'Locking screen in 2 minutes'" -locker "$HOME/.config/i3/lock.sh"
+exec --no-startup-id synclient HorizTwoFingerScroll=1
 
 # start a terminal
 bindsym $mod+Return exec urxvt
