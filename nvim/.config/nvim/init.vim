@@ -1,4 +1,21 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'itchyny/lightline.vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-sensible'
+Plugin 'dylanaraps/wal'
+Plugin 'lucy/term.vim'
+
+call vundle#end()
+
+filetype plugin indent on
+
+" -----------------------------------------------
 
 set autoindent
 set tabstop=4
@@ -24,18 +41,11 @@ syntax on
 set bg=dark
 
 " This is for st, see here: https://github.com/neovim/neovim/issues/3211
-map <F1> <del>
-map! <F1> <del>
+" map <F1> <del>
+" map! <F1> <del>
 
 command W w
 command Q q
-
-command Vsp vsp
-command VSp vsp
-command VSP vsp
-
-command Sp sp
-command SP sp
 
 set splitbelow
 set splitright
@@ -115,15 +125,3 @@ let g:lightline = {
       \ },
       \ }
 
-let g:buftabline_numbers = 1
-let g:buftabline_indicators = 1
-let g:buftabline_show = 2
-
-let g:filebeagle_show_hidden = 1
-let g:filebeagle_show_line_numbers = 1
-
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
