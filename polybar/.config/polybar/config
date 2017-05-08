@@ -38,20 +38,20 @@ color15 = ${xrdb:color15:#ffffff}
 
 [bar/main]
 ; monitor= $ xrandr -q | grep " connected" | cut -d ' ' -f1
-height = 20
+height = 24
 background = ${colours.background}
-padding = 1
+padding = 0
 separator = "  "
 modules-left =
 modules-center = i3
 modules-right = ethernet wifi volume battery battery2 clock
 
-border-top-size = 7
+border-top-size = 0
 border-top-color = ${colours.background}
-border-bottom-size = 9
+border-bottom-size = 0
 border-bottom-color = ${colours.background}
 
-font-0 = SFMono:size=10;2
+font-0 = Fantasque Sans Mono:size=10;2
 font-1 = FontAwesome:size=10;2
 font = 1
 
@@ -76,34 +76,21 @@ tray-position =
 [module/i3]
 type = internal/i3
 pin-workspaces = true
-strip-wsnumbers = false
+strip-wsnumbers = true
 
-label-focused = " %name% "
+label-focused = "  %name%  "
 label-focused-background = ${colours.color5}
 
-label-unfocused = " %name% "
+label-unfocused = "  %name%  "
 
-label-visible = " %name% "
-label-visible-background = ${colours.color6}
+label-visible = "  %name%  "
+label-visible-background = ${colours.color8}
 
-label-urgent = " %name% "
-
-[module/desktop]
-type = internal/xworkspaces
-pin-workspaces = true
-label-active-foreground = ${colours.foreground}
-label-occupied-foreground = ${colours.color8}
-label-urgent-foreground = ${colours.color8}
-label-empty-foreground = ${colours.color8}
-label-active-overline = ${colours.foreground}
-label-active = " %name% "
-label-occupied = " %name% " 
-label-urgent = " %name%! "
-label-empty = " %name% "
+label-urgent = "  %name%  "
 
 [module/clock]
 type = internal/date
-date = "%b %d, %l:%M %P"
+date = " %b %d, %l:%M %P "
 format-prefix = " "
 format-suffix = " "
 interval = 30

@@ -6,6 +6,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+set colorcolumn=80
+
 set number
 set relativenumber
 
@@ -16,7 +18,7 @@ set lazyredraw
 set noshowmode
 
 " set termguicolors
-colorscheme noctu
+colorscheme wal
 syntax on
 
 set bg=dark
@@ -91,7 +93,7 @@ endfunc
 
 let g:lightline = {
       \ 'enable': { 'statusline': 1, 'tabline': 1 },
-      \ 'colorscheme': 'default',
+      \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ ['mode', 'paste'], ['fname']],
       \   'right': [ [ 'lineinfo' ],  [ 'readonly', 'filetype' ] ]
