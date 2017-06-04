@@ -76,6 +76,7 @@ docker_delete () {
 
 kuben() {
 	local kube_namespace=$(cat ~/.kube_namespace)
+	KUBE_PROMPT_ENABLE=1
 	if [[ -z $kube_namespace ]]; then
 		kubectl "$@"
 	else
