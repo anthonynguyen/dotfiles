@@ -71,7 +71,7 @@ docker_init () {
 
 docker_delete () {
 	docker rm -f $(docker ps -a -q)
-	docker rmi $(docker images -q)
+	docker rmi -f $(docker images -q)
 }
 
 kuben() {
