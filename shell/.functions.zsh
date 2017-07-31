@@ -84,6 +84,10 @@ kuben() {
 	fi
 }
 
+kpod() {
+	kuben get pod | grep "$1" | cut -f 1 -d " " | head -n 1
+}
+
 kube_namespace() {
 	if [ "$#" -ne 1 ]; then
 		cat ~/.kube_namespace
