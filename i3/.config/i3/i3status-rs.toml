@@ -1,0 +1,67 @@
+[theme]
+name = "plain"
+[theme.overrides]
+idle_bg = "#222D32"
+idle_fg = "#CFD8DC"
+info_bg = "#449CDB"
+info_fg = "#1D1F21"
+good_bg = "#99b938"
+good_fg = "#1D1F21"
+warning_bg = "#FE7E29"
+warning_fg = "#1D1F21"
+critical_bg = "#ff5252"
+critical_fg = "#1D1F21"
+separator = ""
+# separator_bg = auto
+# separator_fg = auto
+alternating_tint_bg = "#000000"
+alternating_tint_fg = "#000000"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+# music = "    "
+music = "   "
+time = " "
+memory_mem = "   "
+memory_swap = " [] "
+cpu = "   "
+bat = "   "
+bat_full = "   "
+bat_charging = "   "
+bat_discharging = "   "
+volume_muted = " "
+
+[[block]]
+block = "music"
+max_width = 32
+player = "spotify"
+buttons = ["play", "next"]
+
+[[block]]
+block = "memory"
+clickable = true
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+warning_mem = 70
+critical_mem = 90
+
+[[block]]
+block = "cpu"
+interval = 1
+info = 50
+warning = 70
+critical = 90
+
+[[block]]
+block = "sound"
+interval = 1
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "time"
+interval = 30
+format = " %b %d, %l:%M %P "
