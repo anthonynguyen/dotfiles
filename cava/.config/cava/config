@@ -1,0 +1,9 @@
+[general]
+mode = normal
+framerate = 120
+overshoot = 40
+
+[color]
+gradient = 1
+gradient_color_1 = '#067599'
+gradient_color_2 = '#E6F3FF'
