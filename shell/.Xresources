@@ -40,59 +40,46 @@ URxvt.internalBorder: 13
 
 URxvt.urgentOnBell: True
 
-!URxvt*font: xft:Fantasque Sans Mono:size=11:antialias=true:autohint=true
-!URxvt*boldFont: xft:Fantasque Sans Mono:bold:size=11:antialias=true:autohint=true
-!URxvt*italicFont: xft:Fantasque Sans Mono:italic:size=11:antialias=true:autohint=true
-!URxvt*bolditalicFont: xft:Fantasque Sans Mono:bold:italic:size=11:antialias=true:autohint=true
-
-URxvt*font: xft:Tamsyn:size=8
+URxvt*font: xft:Dina:size=8
 
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
 
-! special
-*.foreground:   #bdbbb3
-*.background:   #0B1617
 
-*.cursorColor:  #bdbbb3
-
-! black
-*.color0:       #172e30
-*.color8:       #316266
-
-! red
-*.color1:       #bc2645
-*.color9:       #d6405f
-
-! green
-*.color2:       #739ca7
-*.color10:      #89bac7
-
-! yellow
-! *.color3:       #c6b07d
-! *.color11:      #dec790
-
-*.color3:       #CCAC62
-*.color11:      #E6C26E
-
-! blue
-*.color4:       #305568
-*.color12:      #40718a
-
-! magenta
-*.color5:       #6A5778
-! 9278a6
-*.color13:      #876F99
-! ae8fc6
+! ------------------------------------------------------------------------------
 
 
-!9A79B5
-! cyan
-*.color6:       #a37693
-! #305568
-*.color14:      #c790b3
-! 40718a
+*.background: #08111b
+*.foreground: #A4B9CC
 
-! white
-*.color7:       #9c9a93
-*.color15:      #bdbbb3
+! Black
+*.color0: #08111b
+*.color8: #1E4269
+
+! Red
+*.color1: #AD5768
+*.color9: #E07187
+
+! Green
+*.color2: #365C5B
+*.color10: #548F8D
+
+! Yellow
+*.color3: #B3AE7D
+*.color11: #E6DFA0
+
+! Blue
+*.color4: #044E66
+*.color12: #067599
+
+! Purple
+*.color5: #042F42
+*.color13: #075475
+
+! Cyan
+*.color6: #5883A8
+*.color14: #73ABDB
+
+! Grey
+*.color7: #A4B9CC
+*.color15: #CDE7FF
