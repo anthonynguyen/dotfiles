@@ -214,12 +214,12 @@ bar {
     strip_workspace_numbers yes
     tray_output none
     colors {
-        separator #ff0000
-        background #222222
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        separator #CDE7FF
+        background #08111b
+        statusline #CDE7FF
+        focused_workspace #1E4269 #1E4269 #E6F3FF
+        active_workspace #1E4269 #08111b #A4B9CC
+        inactive_workspace #08111b #08111b #A4B9CC
+        urgent_workspace #AD5768 #AD5768 #E6F3FF
     }
 }

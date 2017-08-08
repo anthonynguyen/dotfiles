@@ -54,7 +54,7 @@ URxvt*keysym.End: \033[4~
 
 ! Black
 *.color0: #08111b
-*.color8: #1E4269
+*.color8: #17324F
 
 ! Red
 *.color1: #AD5768
@@ -82,4 +82,4 @@ URxvt*keysym.End: \033[4~
 
 ! Grey
 *.color7: #A4B9CC
-*.color15: #CDE7FF
+*.color15: #E6F3FF
