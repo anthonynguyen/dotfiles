@@ -60,6 +60,11 @@ interval = 1
 
 [[block]]
 block = "battery"
+device = 0
+
+[[block]]
+block = "battery"
+device = 1
 
 [[block]]
 block = "time"
