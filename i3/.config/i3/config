@@ -42,7 +42,7 @@ set_from_resource $color14 color14 #000000
 set_from_resource $color15 color15 #000000
 
 # class                 border      backgr.     text        indicator     child_border
-client.focused          $color14    $color14    $foreground $color14      $color14
+client.focused          $color14    $color5     $foreground $color14      $color14
 client.focused_inactive $background $background $foreground $background   $background
 client.unfocused        $background $background $foreground $background   $background
 client.urgent           $color1     $background $foreground $background   $color1
@@ -77,7 +77,7 @@ exec --no-startup-id compton -bG -l -5 -t -5 -r 5
 #exec --no-startup-id compton -bcG -l -11 -t -11 -r 10 --shadow-exclude 'name = "Polybar tray window"'
 #exec --no-startup-id polybar -r main
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill ~/Wallpapers/samuel-zeller-250039.jpg
+exec --no-startup-id feh --bg-fill ~/Wallpapers/tim-marshall-82948.jpg
 exec --no-startup-id synclient HorizTwoFingerScroll=1
 # exec --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
 
