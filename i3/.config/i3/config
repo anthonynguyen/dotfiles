@@ -212,7 +212,7 @@ bar {
     position bottom
     status_command ~/.cargo/bin/i3status-rs ~/.config/i3/i3status-rs.toml
     strip_workspace_numbers yes
-    tray_output none
+    tray_output primary
     colors {
         separator #CDE7FF
         background #08111b
