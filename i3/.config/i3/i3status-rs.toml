@@ -54,17 +54,13 @@ info = 50
 warning = 70
 critical = 90
 
-[[block]]
-block = "sound"
-interval = 1
+# [[block]]
+# block = "sound"
+# interval = 1
 
 [[block]]
 block = "battery"
-device = 0
-
-[[block]]
-block = "battery"
-device = 1
+device = "BAT0"
 
 [[block]]
 block = "time"
