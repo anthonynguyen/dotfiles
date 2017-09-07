@@ -50,15 +50,12 @@ client.placeholder      $background $background $foreground $background   $backg
 
 client.background       $background
 
-# hide_edge_borders smart
-
 focus_follows_mouse no
 mouse_warping output
 
-new_window pixel 5
-# new_window normal 0px
+new_window pixel 3
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 assign [class="^Chromium"] $10
 
@@ -67,7 +64,7 @@ gaps inner 10
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Fantasque Sans Mono 18
-for_window [class=".*"] title_format "<span font='Fantasque Sans Mono 8'> &gt;  %title</span>"
+for_window [class=".*"] title_format "<span font='Fantasque Sans Mono 10'> &gt;  %title</span>"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -75,18 +72,15 @@ floating_modifier $mod
 exec --no-startup-id killall notify-osd
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id setxkbmap -option caps:escape
-#exec --no-startup-id compton -bG -l -5 -t -5 -r 5
-#exec --no-startup-id compton -bcG -l -11 -t -11 -r 10 --shadow-exclude 'name = "Polybar tray window"'
-#exec --no-startup-id polybar -r main
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/wall/tim-marshall-82948.jpg
 exec --no-startup-id synclient HorizTwoFingerScroll=1
 
 # start a terminal
 bindsym $mod+Return exec urxvt
-bindsym F1      exec urxvt
+bindsym F1 exec urxvt
 
-bindsym ctrl+space exec j4-dmenu-desktop --dmenu='dmenu -i -dim 0 -l 9 -w 400 -h 30 -x 760 -y 390 -p \">>\" -fn \"Fantasque Sans Mono-11\"'
+bindsym ctrl+space exec rofi -show
 bindsym ctrl+mod1+l exec ~/.config/i3/lock.sh
 
 # kill focused window

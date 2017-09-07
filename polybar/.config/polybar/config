@@ -44,7 +44,7 @@ padding = 0
 separator = "  "
 modules-left =
 modules-center = i3
-modules-right = ethernet wifi volume battery battery2 clock
+modules-right = ethernet wifi volume battery clock
 
 border-top-size = 0
 border-top-color = ${colours.background}
@@ -57,21 +57,6 @@ font = 1
 
 tray-position = left
 tray-maxsize = 20
-
-[bar/work1]
-inherit = bar/main
-monitor = DP2-3
-tray-position =
-
-[bar/work2]
-inherit = bar/main
-monitor = DP2-1
-
-[bar/work3]
-inherit = bar/main
-monitor = DP2-2
-tray-position =
-
 
 [module/i3]
 type = internal/i3
@@ -116,10 +101,6 @@ ramp-capacity-1 = ""
 ramp-capacity-2 = ""
 ramp-capacity-3 = ""
 ramp-capacity-4 = ""
-
-[module/battery2]
-inherit = module/battery
-battery = BAT1
 
 [module/volume]
 type = internal/volume
