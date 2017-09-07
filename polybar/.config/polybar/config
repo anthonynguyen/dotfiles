@@ -38,25 +38,25 @@ color15 = ${xrdb:color15:#ffffff}
 
 [bar/main]
 ; monitor= $ xrandr -q | grep " connected" | cut -d ' ' -f1
-height = 24
+height = 28
 background = ${colours.background}
 padding = 0
 separator = "  "
-modules-left =
+modules-left = title
 modules-center = i3
-modules-right = ethernet wifi volume battery clock
+modules-right = cpu temperature mem backlight ethernet wifi volume battery clock
 
 border-top-size = 0
 border-top-color = ${colours.background}
 border-bottom-size = 0
 border-bottom-color = ${colours.background}
 
-font-0 = Fantasque Sans Mono:size=10;2
+font-0 = Fantasque Sans Mono:size=11;2
 font-1 = FontAwesome:size=10;2
 font = 1
 
 tray-position = left
-tray-maxsize = 20
+tray-maxsize = 22
 
 [module/i3]
 type = internal/i3
@@ -64,12 +64,12 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 label-focused = "  %name%  "
-label-focused-background = ${colours.color5}
+label-focused-background = ${colours.color13}
 
 label-unfocused = "  %name%  "
 
 label-visible = "  %name%  "
-label-visible-background = ${colours.color8}
+label-visible-background = ${colours.color14}
 
 label-urgent = "  %name%  "
 
@@ -79,7 +79,7 @@ date = " %b %d, %l:%M %P "
 format-prefix = " "
 format-suffix = " "
 interval = 30
-format-background = ${colours.color8}
+format-background = ${colours.color13}
 
 [module/battery]
 type = internal/battery
@@ -93,7 +93,7 @@ format-charging-foreground = ${colours.color10}
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-suffix = -
 
-ramp-capacity-foreground = ${colours.color8}
+ramp-capacity-foreground = ${colours.color14}
 ramp-capacity-0-foreground = ${colours.color1}
 ramp-capacity-1-foreground = ${colours.color1}
 ramp-capacity-0 = ""
@@ -104,16 +104,21 @@ ramp-capacity-4 = ""
 
 [module/volume]
 type = internal/volume
-master-soundcard = default
+master-soundcard = hw:1
+headphone-soundcard = hw:1
+speaker-soundcard = hw:1
 master-mixer = Master
-mapping = false
+headphone-mixer = Headphone
+speaker-mixer = Speaker
+headphone-id = 14
+mapped = true
 
 format-volume = <ramp-volume> <label-volume>
 format-muted = <ramp-volume> <label-muted>
 
 label-muted = mute
 
-ramp-volume-foreground = ${colours.color8}
+ramp-volume-foreground = ${colours.color14}
 ramp-volume-0-foreground = ${colours.color1}
 ramp-volume-0 = ""
 ramp-volume-1 = ""
@@ -124,37 +129,55 @@ type = internal/network
 interface = wlp4s0
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colours.color8}
+format-connected-prefix-foreground = ${colours.color14}
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
 label-disconnected = " "
-format-disconnected-foreground = ${colours.color1}
+format-disconnected-foreground = ${colours.color9}
 
 [module/ethernet]
 type = internal/network
-interface = enp0s31f6
+interface = enp0s25
 format-connected = <label-connected>
 label-connected = ""
-format-connected-foreground = ${colours.color8}
+format-connected-foreground = ${colours.color14}
 
 format-disconnected = <label-disconnected>
 label-disconnected = ""
-format-disconnected-foreground = ${colours.color1}
+format-disconnected-foreground = ${colours.color9}
 
-[module/bspwm]
-type = internal/bspwm
-pin-workspaces = false
-enable-click = true
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colours.color14}
 
-label-focused-foreground = ${colours.foreground}
-label-occupied-foreground = ${colours.color8}
-label-urgent-foreground = ${colours.color8}
-label-empty-foreground = ${colours.color8}
-label-focused-overline = ${colours.foreground}
-label-focused = " %name% "
-label-occupied = " %name%." 
-label-urgent = " %name%!"
-label-empty = " %name% "
+[module/mem]
+type = internal/memory
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colours.color14}
 
+[module/backlight]
+type = internal/xbacklight
+enable-scroll = true
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colours.color14}
+label = %percentage%%
 
+[module/title]
+type = internal/xwindow
+label = " %title%"
+
+[module/temperature]
+type = internal/temperature
+interval = 3
+warn-temperature = 60
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+ramp-foreground = ${colours.color14}
+ramp-0 = ""
+ramp-1 = ""
+ramp-2 = ""

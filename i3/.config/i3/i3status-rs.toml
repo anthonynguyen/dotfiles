@@ -12,8 +12,8 @@ warning_fg = "#E6F3FF"
 critical_bg = "#AD5768"
 critical_fg = "#E6F3FF"
 separator = ""
-# separator_bg = auto
-# separator_fg = auto
+separator_bg = "auto"
+separator_fg = "auto"
 alternating_tint_bg = "#000000"
 alternating_tint_fg = "#000000"
 
@@ -54,9 +54,9 @@ info = 50
 warning = 70
 critical = 90
 
-#[[block]]
-#block = "sound"
-#interval = 1
+[[block]]
+block = "sound"
+interval = 1
 
 [[block]]
 block = "battery"

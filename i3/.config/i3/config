@@ -72,6 +72,7 @@ floating_modifier $mod
 exec --no-startup-id killall notify-osd
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id polybar -r main
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/wall/tim-marshall-82948.jpg
 exec --no-startup-id synclient HorizTwoFingerScroll=1
@@ -202,19 +203,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-    font pango:Fantasque Sans Mono, Icons 10
-    position bottom
-    status_command ~/.cargo/bin/i3status-rs ~/.config/i3/i3status-rs.toml
-    strip_workspace_numbers yes
-    tray_output primary
-    colors {
-        separator #CDE7FF
-        background #08111b
-        statusline #CDE7FF
-        focused_workspace #1E4269 #1E4269 #E6F3FF
-        active_workspace #1E4269 #08111b #A4B9CC
-        inactive_workspace #08111b #08111b #A4B9CC
-        urgent_workspace #AD5768 #AD5768 #E6F3FF
-    }
-}
+# bar {
+#     font pango:Fantasque Sans Mono, Icons 10
+#     position bottom
+#     status_command ~/.config/i3/i3status.sh
+
+#     strip_workspace_numbers yes
+#     tray_output primary
+
+#     height 28
+
+#     colors {
+#         separator #CDE7FF
+#         background #08111b
+#         statusline #CDE7FF
+#         focused_workspace #1E4269 #1E4269 #E6F3FF
+#         active_workspace #1E4269 #08111b #A4B9CC
+#         inactive_workspace #08111b #08111b #A4B9CC
+#         urgent_workspace #AD5768 #AD5768 #E6F3FF
+#     }
+# }
