@@ -37,7 +37,6 @@ color15 = ${xrdb:color15:#ffffff}
 ; -------------------------------------------------------------------
 
 [bar/main]
-; monitor= $ xrandr -q | grep " connected" | cut -d ' ' -f1
 height = 28
 background = ${colours.background}
 padding = 0
@@ -150,7 +149,7 @@ format-disconnected-foreground = ${colours.color9}
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colours.color14}
 
 [module/mem]
@@ -163,7 +162,7 @@ format-prefix-foreground = ${colours.color14}
 type = internal/xbacklight
 enable-scroll = true
 format = <label>
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colours.color14}
 label = %percentage%%
 
