@@ -96,6 +96,10 @@ if [[ -d $HOME/.local/bin ]]; then
 	export PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [[ -d $HOME/.yarn/bin ]]; then
+	export PATH="$HOME/.yarn/bin:$PATH"
+fi
+
 if [[ -d $HOME/sw/zsh-syntax-highlighting ]]; then
 	source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi

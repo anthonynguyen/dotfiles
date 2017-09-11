@@ -40,7 +40,7 @@ URxvt.internalBorder: 13
 
 URxvt.urgentOnBell: True
 
-URxvt*font: xft:Fantasque Sans Mono:size=11
+URxvt*font: xft:Dina:size=8
 
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
