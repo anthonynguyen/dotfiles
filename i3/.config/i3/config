@@ -10,16 +10,16 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $1 "1: α "
-set $2 "2: β "
-set $3 "3: γ "
-set $4 "4: δ "
-set $5 "5: ε "
-set $6 "6: ζ "
-set $7 "7: η "
-set $8 "8: θ "
-set $9 "9: ι "
-set $10 "10: κ "
+set $1 "1: a "
+set $2 "2: b "
+set $3 "3: c "
+set $4 "4: d "
+set $5 "5: e "
+set $6 "6: f "
+set $7 "7: g "
+set $8 "8: h "
+set $9 "9: i "
+set $10 "10: j "
 
 set_from_resource $foreground foreground #ffffff
 set_from_resource $background background #222222
