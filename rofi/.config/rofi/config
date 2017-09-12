@@ -2,19 +2,24 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #282828, argb:4dffffff, argb:4dffffff
-rofi.color-normal: #282828, #ebdbb2, #282828, #928374, #ebdbb2
-rofi.color-active: #282828, #458588, #282828, #458588, #ebdbb2
-rofi.color-urgent: #282828, #cc241d, #282828, #cc241d, #ebdbb2
+rofi.color-window: #08111b, argb:4dffffff, argb:4dffffff
+rofi.color-normal: #08111b, #A4B9CC, #08111b, #044E66, #A4B9CC
+rofi.color-active: #08111b, #067599, #08111b, #044E66, #E6DFA0
+rofi.color-urgent: #08111b, #cc241d, #08111b, #AD5768, #A4B9CC
 
 rofi.modi: combi,drun,window
 rofi.combi-modi: window,drun
 
+rofi.display-window: +
+rofi.display-drun: >
+
+rofi.display-combi:
+
 rofi.width: 30
-rofi.lines: 10
+rofi.lines: 15
 
 rofi.bw: 3
-rofi.font: Roboto 10
+rofi.font: Fantasque Sans Mono 10
 rofi.padding: 25
 rofi.sidebar-mode: false
 
