@@ -71,3 +71,5 @@ alias ta='tmux a'
 alias tn='tmux new -s'
 
 alias please='sudo `fc -ln -1`'
+
+alias scrn='maim -s ~/scrn/$(date +%s).png'
