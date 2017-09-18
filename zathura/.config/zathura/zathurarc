@@ -1,0 +1,9 @@
+set recolor-darkcolor "#A4B9CC"
+set recolor-lightcolor "#08111b"
+set highlight-color "#5883A8"
+set highlight-active-color "#E07187"
+
+set recolor true
+
+map ] zoom in
+map [ zoom out
