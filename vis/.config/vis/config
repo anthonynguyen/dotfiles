@@ -1,0 +1,3 @@
+visualizer.fps=30
+visualizers=spectrum,ellipse,lorenz
+
