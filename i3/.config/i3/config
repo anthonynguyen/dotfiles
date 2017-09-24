@@ -76,6 +76,7 @@ exec --no-startup-id polybar -r main
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/wall/tim-marshall-82948.jpg
 exec --no-startup-id synclient HorizTwoFingerScroll=1
+exec --no-startup-id exec ~/.config/i3/touchpad.sh
 
 # start a terminal
 bindsym $mod+Return exec urxvt
