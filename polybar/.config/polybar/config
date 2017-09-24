@@ -104,14 +104,10 @@ ramp-capacity-4 = ""
 
 [module/volume]
 type = internal/volume
-master-soundcard = hw:1
-headphone-soundcard = hw:1
-speaker-soundcard = hw:1
-master-mixer = Master
-headphone-mixer = Headphone
-speaker-mixer = Speaker
-headphone-id = 14
-mapped = true
+master-soundcard = default
+headphone-soundcard = default
+speaker-soundcard = default
+mapped = false
 
 format-volume = <ramp-volume> <label-volume>
 format-muted = <ramp-volume> <label-muted>
