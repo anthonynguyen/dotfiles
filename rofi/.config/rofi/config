@@ -7,7 +7,7 @@ rofi.color-normal: #08111b, #A4B9CC, #08111b, #044E66, #A4B9CC
 rofi.color-active: #08111b, #067599, #08111b, #044E66, #E6DFA0
 rofi.color-urgent: #08111b, #cc241d, #08111b, #AD5768, #A4B9CC
 
-rofi.modi: combi,drun,window
+rofi.modi: drun,combi,run
 rofi.combi-modi: window,drun
 
 rofi.display-window: +
@@ -15,8 +15,8 @@ rofi.display-drun: >
 
 rofi.display-combi:
 
-rofi.width: 30
-rofi.lines: 15
+rofi.width: 20
+rofi.lines: 7
 
 rofi.bw: 3
 rofi.font: Fantasque Sans Mono 10
