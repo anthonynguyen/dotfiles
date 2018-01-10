@@ -29,8 +29,8 @@ alias pacsrch='pacman -Ss'
 alias pacrem='sudo pacman -Rs'
 alias pacinf='pacman -Qi'
 
-alias yaoin='yaourt -S'
-alias yaosrch='yaourt -Ss'
+alias aurin='pacaur -S'
+alias aurupg='pacaur -Syu'
 
 alias emin='sudo emerge -a'
 alias emupd='sudo emerge --sync'

@@ -1,8 +1,8 @@
 !URxvt*.transparent: true
 URxvt*.shading: 10
 URxvt.scrollBar: false
-URxvt.geometry: 180x60
-!URxvt.geometry: 85x27
+!URxvt.geometry: 180x60
+URxvt.geometry: 85x27
 URxvt.depth: 32
 
 URxvt.perl-ext-common: font-size
@@ -37,6 +37,7 @@ URxvt.iso14755_52: false
 ! URxvt.letterSpace: -1
 
 URxvt.internalBorder: 13
+!URxvt.internalBorder: 0
 
 URxvt.urgentOnBell: True
 

@@ -27,9 +27,9 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-if [[ -d $HOME/dev/waypoints ]]; then
-	source $HOME/dev/waypoints/waypoints.zsh
-	fpath=(~/dev/waypoints $fpath)
+if [[ -d $HOME/waypoints ]]; then
+	source $HOME/waypoints/waypoints.zsh
+	fpath=(~/waypoints $fpath)
 fi
 
 # if [[ -d $HOME/sw/zsh-completions ]]; then
