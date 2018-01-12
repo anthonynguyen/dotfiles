@@ -1,6 +1,12 @@
-alias ls='ls -F --color=auto --group-directories-first'
+if [[ `uname` == 'Darwin' ]]; then
+    LS='gls'
+else
+    LS='ls'
+fi
 
-alias ll='ls -Aho'
+alias ls="$LS -F --color=auto --group-directories-first"
+
+alias ll="$LS -Aho"
 
 alias c='clear'
 alias s='sudo'
