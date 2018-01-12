@@ -1,6 +1,47 @@
+git_branch() {
+	echo $(git branch | sed -n '/\* /s///p')
+}
+
+git_num_staged() {
+	echo $(git status --porcelain | grep "^[MADR]" | wc -l)
+}
+
+git_num_unstaged() {
+	echo $(git status --porcelain | grep "^.[MADR]" | wc -l)
+}
+
+git_num_untracked() {
+	echo $(git status --porcelain | grep "^??" | wc -l)
+}
+
+git_staged_prompt() {
+	if [[ $(git_num_staged) -gt 0 ]]; then
+		echo "+"
+	fi
+}
+
+git_unstaged_prompt() {
+	if [[ $(git_num_unstaged) -gt 0 ]]; then
+		echo "!"
+	fi
+}
+
+git_untracked_prompt() {
+	if [[ $(git_num_untracked) -gt 0 ]]; then
+		echo "?"
+	fi
+}
+
+git_files_prompt() {
+	let "total = $(git_num_staged) + $(git_num_unstaged) + $(git_num_untracked)"
+	if [[ total -gt 0 ]]; then
+		echo "$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)"
+	fi
+}
+
 prompt_git() {
 	if git branch > /dev/null 2>/dev/null; then
-		echo "$dot%F{magenta}$(rs-gitinf)%f"
+		echo "$dot%F{magenta}$(git_branch)$(git_files_prompt)%f"
 	fi
 }
 
@@ -40,7 +81,7 @@ setprompt() {
 	fi
 
 	print -P "%B%F{yellow}%T%f$prompt_status$dot%F{cyan}%~%f$(prompt_git)$(prompt_kubectl)%b"
-	PROMPT="%B ${prompt_char}%b "
+	PROMPT="%B ${prompt_char}%b  "
 }
 
 precmd () {
