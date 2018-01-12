@@ -100,14 +100,12 @@ if [[ -d $HOME/.yarn/bin ]]; then
 	export PATH="$HOME/.yarn/bin:$PATH"
 fi
 
-if [[ -d $HOME/sw/zsh-syntax-highlighting ]]; then
-	source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -d $HOME/.rvm/bin ]]; then
+	export PATH="$HOME/.rvm/bin:$PATH"
 fi
 
-if which ruby >/dev/null && which gem >/dev/null; then
-	export GEM_HOME="$(ruby -rubygems -e 'puts Gem.user_dir')"
-	export GEM_PATH="$GEM_HOME:/var/lib/gems/2.3.0"
-	export PATH="$GEM_HOME/bin:$PATH"
+if [[ -d $HOME/sw/zsh-syntax-highlighting ]]; then
+	source ~/sw/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 export PAGER=/usr/bin/less
@@ -120,7 +118,4 @@ export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
