@@ -52,7 +52,7 @@ prompt_kubectl() {
 
 	CONTEXT=$(cat ~/.kube/config | grep current-context | cut -f 2 -d " ")
 	if [ -n "$CONTEXT" ]; then
-        echo "$dot%F{blue}$CONTEXT%f"
+        echo "$dot%F{blue}$CONTEXT:$(kube_namespace)%f"
     fi
 }
 

@@ -5,8 +5,7 @@ else
 fi
 
 alias ls="$LS -F --color=auto --group-directories-first"
-
-alias ll="$LS -Aho"
+alias ll="$LS -AFho --color=auto --group-directories-first"
 
 alias c='clear'
 alias s='sudo'
