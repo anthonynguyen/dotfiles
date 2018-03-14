@@ -40,10 +40,23 @@ git_files_prompt() {
 }
 
 prompt_git() {
+	if [[ $GIT_PROMPT_ENABLE -eq 0 ]]; then
+		return
+	fi
+
 	if git branch > /dev/null 2>/dev/null; then
 		echo "$dot%F{magenta}$(git_branch)$(git_files_prompt)%f"
 	fi
 }
+
+gp() {
+	if [ $GIT_PROMPT_ENABLE = "0" ]; then
+		GIT_PROMPT_ENABLE=1
+	else
+		GIT_PROMPT_ENABLE=0
+	fi
+}
+GIT_PROMPT_ENABLE=1
 
 prompt_kubectl() {
 	if [[ $KUBE_PROMPT_ENABLE -eq 0 ]]; then
