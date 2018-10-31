@@ -63,6 +63,7 @@ alias gotest='go test -v -cover'
 alias gocover='go test -v -coverprofile=coverage.out; go tool cover -html=coverage.out; rm coverage.out'
 
 alias envi='source env/bin/activate'
+alias wenvi='source env/Scripts/activate'
 
 alias hsg='history 0 | ag'
 
