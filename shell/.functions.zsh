@@ -1,53 +1,29 @@
-git_branch() {
-	echo $(git branch | sed -n '/\* /s///p')
-}
-
-git_num_staged() {
-	echo $(git status --porcelain | grep "^[MADR]" | wc -l)
-}
-
-git_num_unstaged() {
-	echo $(git status --porcelain | grep "^.[MADR]" | wc -l)
-}
-
-git_num_untracked() {
-	echo $(git status --porcelain | grep "^??" | wc -l)
-}
-
-git_staged_prompt() {
-	if [[ $(git_num_staged) -gt 0 ]]; then
-		echo "+"
-	fi
-}
-
-git_unstaged_prompt() {
-	if [[ $(git_num_unstaged) -gt 0 ]]; then
-		echo "!"
-	fi
-}
-
-git_untracked_prompt() {
-	if [[ $(git_num_untracked) -gt 0 ]]; then
-		echo "?"
-	fi
-}
-
-git_files_prompt() {
-	let "total = $(git_num_staged) + $(git_num_unstaged) + $(git_num_untracked)"
-	if [[ total -gt 0 ]]; then
-		echo "$(git_staged_prompt)$(git_unstaged_prompt)$(git_untracked_prompt)"
-	fi
-}
-
 prompt_git() {
 	if [[ $GIT_PROMPT_ENABLE -eq 0 ]]; then
 		return
 	fi
 
-	if git branch > /dev/null 2>/dev/null; then
-		echo "$dot%F{magenta}$(git_branch)$(git_files_prompt)%f"
+	gbranch=$(git branch 2>/dev/null)
+	if [ $? -ne 0 ]; then
+		return
 	fi
+
+	gcur=$(echo $gbranch| sed -n '/\* /s///p')
+	gst=$(git status --porcelain)
+	gfiles=""
+	if [[ $(echo $gst | grep "^[MADR]" | wc -l) -gt 0 ]]; then
+		gfiles="$gfiles+"
+	fi
+	if [[ $(echo $gst | grep "^.[MADR]" | wc -l) -gt 0 ]]; then
+		gfiles="$gfiles!"
+	fi
+	if [[ $(echo $gst | grep "^??" | wc -l) -gt 0 ]]; then
+		gfiles="$gfiles?"
+	fi
+
+	echo "$dot%F{magenta}g:$gcur%f%F{white}$gfiles%f"
 }
+GIT_PROMPT_ENABLE=1
 
 gp() {
 	if [ $GIT_PROMPT_ENABLE = "0" ]; then
@@ -56,7 +32,39 @@ gp() {
 		GIT_PROMPT_ENABLE=0
 	fi
 }
-GIT_PROMPT_ENABLE=1
+
+prompt_hg() {
+	if [[ $HG_PROMPT_ENABLE -eq 0 ]]; then
+		return
+	fi
+
+	hg root >/dev/null 2>/dev/null
+	if [ $? -ne 0 ]; then
+		return
+	fi
+
+	hgcur=$(hg log -T '{node|short}' -r .)
+	hgst=$(hg status)
+
+	hgfiles=""
+	if [[ $(echo $hgst | grep "^[M!]" | wc -l) -gt 0 ]]; then
+		hgfiles="$hgfiles!"
+	fi
+	if [[ $(echo $hgst | grep "^[?]" | wc -l) -gt 0 ]]; then
+		hgfiles="$hgfiles?"
+	fi
+
+	echo "$dot%F{magenta}hg:$hgcur%f%F{white}$hgfiles%f"
+}
+HG_PROMPT_ENABLE=1
+
+hp() {
+	if [ $HG_PROMPT_ENABLE = "0" ]; then
+		HG_PROMPT_ENABLE=1
+	else
+		HG_PROMPT_ENABLE=0
+	fi
+}
 
 prompt_kubectl() {
 	if [[ $KUBE_PROMPT_ENABLE -eq 0 ]]; then
@@ -68,6 +76,7 @@ prompt_kubectl() {
         echo "$dot%F{blue}$CONTEXT:$(kube_namespace)%f"
     fi
 }
+KUBE_PROMPT_ENABLE=0
 
 kp() {
 	if [ $KUBE_PROMPT_ENABLE = "0" ]; then
@@ -76,7 +85,6 @@ kp() {
 		KUBE_PROMPT_ENABLE=0
 	fi
 }
-KUBE_PROMPT_ENABLE=0
 
 setprompt() {
 	last_status=$?
@@ -93,7 +101,7 @@ setprompt() {
 		prompt_status=""
 	fi
 
-	print -P "%B%F{yellow}%T%f$prompt_status$dot%F{cyan}%~%f$(prompt_git)$(prompt_kubectl)%b"
+	print -P "%B%F{yellow}%T%f$prompt_status$dot%F{cyan}%~%f$(prompt_git)$(prompt_hg)$(prompt_kubectl)%b"
 	PROMPT="%B ${prompt_char}%b  "
 }
 
