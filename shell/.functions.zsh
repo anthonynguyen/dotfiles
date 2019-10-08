@@ -94,10 +94,10 @@ setprompt() {
 
 	if [[ "$last_status" -ne "0" ]]; then
 		# ★ ☀
-		prompt_char="%F{red}★%f"
+		prompt_char="%F{red}>%f"
 		prompt_status="$dot%F{red}x$last_status%f"
 	else
-		prompt_char="%F{white}★%f"
+		prompt_char="%F{white}>%f"
 		prompt_status=""
 	fi
 
