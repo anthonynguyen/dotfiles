@@ -14,6 +14,8 @@ alias fsize='du -sh'
 
 alias zs='source ~/.zshrc'
 
+alias rg='rg -S'
+
 alias zypupg='sudo zypper update'
 alias zypin='sudo zypper install'
 alias zypsrch='zypper search'
