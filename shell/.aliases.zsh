@@ -66,10 +66,6 @@ alias gg='glo --graph'
 alias gotest='go test -v -cover'
 alias gocover='go test -v -coverprofile=coverage.out; go tool cover -html=coverage.out; rm coverage.out'
 
-alias envi='source env/bin/activate'
-
-alias hsg='history 0 | ag'
-
 alias rgrep='grep -r -n'
 alias rgrepi='rgrep -i'
 
@@ -80,6 +76,3 @@ alias ta='tmux a'
 alias tn='tmux new -s'
 
 alias please='sudo `fc -ln -1`'
-
-alias scrn='maim ~/scrn/$(date +%s).png'
-alias scrns='scrn -s'
