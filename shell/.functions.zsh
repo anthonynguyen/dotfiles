@@ -109,28 +109,6 @@ precmd () {
 	setprompt
 }
 
-mke() {
-	mkdir -p "$1" && cd "$1"
-}
-
-ws() {
-	ia () {
-		if pidof "$1" > /dev/null
-		then
-			echo -e "[\033[1;32mON\033[0m]  $2"
-		else
-			echo -e "[\033[1;31mOFF\033[0m] $2"
-		fi
-	}
-
-	ia httpd Apache
-	ia mysqld MySQL
-}
-
-docker_init () {
-	eval "$(docker-machine env default)"
-}
-
 docker_delete () {
 	docker rm -f $(docker ps -a -q)
 	docker rmi -f $(docker images -q)
