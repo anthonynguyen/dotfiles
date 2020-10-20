@@ -76,7 +76,7 @@ bindkey "\e[3~" delete-char # Del
 
 bindkey '^R' history-incremental-search-backward
 
-export EDITOR=nvim
+export EDITOR=vim
 
 if [[ -d $HOME/go ]]; then
     export PATH="$PATH:/usr/local/go/bin"
@@ -118,4 +118,3 @@ export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
